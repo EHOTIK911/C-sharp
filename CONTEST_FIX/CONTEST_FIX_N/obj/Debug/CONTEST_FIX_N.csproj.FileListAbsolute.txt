@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\bin\Debug\CONTEST_FIX_N.exe.config
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\bin\Debug\CONTEST_FIX_N.exe
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\bin\Debug\CONTEST_FIX_N.pdb
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\obj\Debug\CONTEST_FIX_N.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\obj\Debug\CONTEST_FIX_N.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\obj\Debug\CONTEST_FIX_N.exe
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\obj\Debug\CONTEST_FIX_N.pdb
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_N\obj\Debug\CONTEST_FIX_N.csproj.AssemblyReference.cache
