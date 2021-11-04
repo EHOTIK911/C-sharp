@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\bin\Debug\CONTEST_F.exe.config
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\bin\Debug\CONTEST_F.exe
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\bin\Debug\CONTEST_F.pdb
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\obj\Debug\CONTEST_F.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\obj\Debug\CONTEST_F.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\obj\Debug\CONTEST_F.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\obj\Debug\CONTEST_F.exe
+C:\Users\Petr\source\repos\CONTEST\CONTEST_F\obj\Debug\CONTEST_F.pdb

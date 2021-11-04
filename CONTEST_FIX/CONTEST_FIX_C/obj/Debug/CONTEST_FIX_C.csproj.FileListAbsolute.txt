@@ -1,0 +1,7 @@
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\bin\Debug\CONTEST_FIX_C.exe.config
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\bin\Debug\CONTEST_FIX_C.exe
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\bin\Debug\CONTEST_FIX_C.pdb
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\obj\Debug\CONTEST_FIX_C.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\obj\Debug\CONTEST_FIX_C.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\obj\Debug\CONTEST_FIX_C.exe
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_C\obj\Debug\CONTEST_FIX_C.pdb

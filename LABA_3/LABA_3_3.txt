@@ -1,0 +1,150 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace CONTEST_D
+{
+    internal class Program
+    {
+        private static List<string> ENTER_MAS()
+        {
+            string path = @"222";
+            List<string> NEW_LIST = File.ReadLines(path).Where(line => !string.IsNullOrWhiteSpace(line)).SelectMany(line => line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            return NEW_LIST;
+        }
+        private static List<string> ENTER_MAS2()
+        {
+            string path2 = @"222";
+            List<string> NEW_LIST2 = File.ReadLines(path2).Where(line => !string.IsNullOrWhiteSpace(line)).SelectMany(line => line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            return NEW_LIST2;
+        }
+        static List<int> input()
+        {
+            List<int> numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToList();
+            return numbers;
+        }
+        static bool IsPrime(int n)
+        {
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                    return false;
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            string path = @"22222";
+            string path2 = @"22222";
+            List<string> NEW_LIST = ENTER_MAS();
+            List<int> MAS_Y = NEW_LIST.ConvertAll(int.Parse);
+            double count_Y = 0;
+            int SUM_Y = 0;
+
+            List<string> NEW_LIST2 = ENTER_MAS();
+            List<int> MAS_Z = NEW_LIST.ConvertAll(int.Parse);
+            double count_Z = 0;
+            int SUM_Z = 0;
+
+            for (int i = 0; i < MAS_Y.Count; i++)
+            {
+                if (IsPrime(MAS_Y[i]))
+                {
+                    count_Y = COUNT_YS(MAS_Y, count_Y, i);
+                    if ((MAS_Y[i] > 9) && (MAS_Y[i] < 100))
+                    {
+
+                        SUM_Y += MAS_Y[i];
+                    }
+                    if (count_Y > 2)
+                    {
+                        MAS_Y.RemoveAt(i);
+                    }
+                }
+            }
+            Console.WriteLine("Массив Y");
+            double s_Y = SR_AR_Y(count_Y, SUM_Y);
+            Console.WriteLine(s_Y);
+            using (StreamWriter sw = File.CreateText(@"22222"))
+            {
+                for (int i = 0; i < MAS_Y.Count; i++)
+                {
+                    sw.Write(MAS_Y[i] + " ");
+                }
+
+            }
+            for (int i = 0; i < MAS_Y.Count; i++)
+            {
+                Console.Write(MAS_Y[i] + " ");
+            }
+            //------------------------------------------------------------
+            for (int i = 0; i < MAS_Z.Count; i++)
+            {
+                if (IsPrime(MAS_Z[i]))
+                {
+                    count_Z = COUNT_ZS(MAS_Z, count_Z, i);
+                    if ((MAS_Z[i] > 9) && (MAS_Z[i] < 100))
+                    {
+
+                        SUM_Z += MAS_Z[i];
+                    }
+                    if (count_Z > 2)
+                    {
+                        MAS_Z.RemoveAt(i);
+                    }
+                }
+            }
+            Console.WriteLine("Массив Z");
+            double s_Z = SR_AR_Z(count_Z, SUM_Z);
+            Console.WriteLine(s_Z);
+            using (StreamWriter sw = File.CreateText(@"22222"))
+            {
+                for (int i = 0; i < MAS_Z.Count; i++)
+                {
+                    sw.Write(MAS_Z[i] + " ");
+                }
+
+            }
+            for (int i = 0; i < MAS_Z.Count; i++)
+            {
+                Console.Write(MAS_Z[i] + " ");
+            }
+            Console.ReadKey();
+        }
+
+        private static double SR_AR_Y(double count_Y, int SUM_Y)
+        {
+            return SUM_Y / count_Y;
+        }
+
+        private static double SR_AR_Z(double count_Z, int SUM_Z)
+        {
+            return SUM_Z / count_Z;
+        }
+
+        private static double COUNT_ZS(List<int> MAS_Z, double count_Z, int i)
+        {
+            if ((MAS_Z[i] > 9) && (MAS_Z[i] < 100))
+            {
+                count_Z++;
+
+            }
+
+            return count_Z;
+        }
+
+        private static double COUNT_YS(List<int> MAS_Y, double count_Y, int i)
+        {
+            if ((MAS_Y[i] > 9) && (MAS_Y[i] < 100))
+            {
+                count_Y++;
+
+            }
+
+            return count_Y;
+        }
+    }
+}

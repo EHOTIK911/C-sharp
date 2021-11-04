@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3787781d-7d14-490b-9c05-d1e068732285": {
+      "ProjectGuid": "3787781d-7d14-490b-9c05-d1e068732285",
+      "DisplayName": "LABA_3_1",
+      "ColorIndex": 0
+    },
+    "0ac5feff-8952-4c40-b530-bab8f220d710": {
+      "ProjectGuid": "0ac5feff-8952-4c40-b530-bab8f220d710",
+      "DisplayName": "LABA_3_2",
+      "ColorIndex": 1
+    },
+    "41121a58-4828-4392-b345-063432a10d0b": {
+      "ProjectGuid": "41121a58-4828-4392-b345-063432a10d0b",
+      "DisplayName": "LABA_3_3",
+      "ColorIndex": 2
+    },
+    "b5b66552-2d8e-4b2a-9bbb-c64290edc3fe": {
+      "ProjectGuid": "b5b66552-2d8e-4b2a-9bbb-c64290edc3fe",
+      "DisplayName": "LABA_3_4",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "ff6a8fab-16e7-4dd8-a234-604b8a030b9d": {
+      "ProjectGuid": "ff6a8fab-16e7-4dd8-a234-604b8a030b9d",
+      "DisplayName": "LABA_2_3_ATT_2",
+      "ColorIndex": 4
+    },
+    "6cbaf392-1848-4129-a7ae-775fcbe11292": {
+      "ProjectGuid": "6cbaf392-1848-4129-a7ae-775fcbe11292",
+      "DisplayName": "LABA_2_1_ATT_2",
+      "ColorIndex": 5
+    },
+    "04c3cd33-bc8d-448d-a070-1f83eac499f5": {
+      "ProjectGuid": "04c3cd33-bc8d-448d-a070-1f83eac499f5",
+      "DisplayName": "TEST1",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

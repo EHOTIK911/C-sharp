@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\LABA_3\TEST\bin\Debug\TEST.exe.config
+C:\Users\Petr\source\repos\LABA_3\TEST\bin\Debug\TEST.exe
+C:\Users\Petr\source\repos\LABA_3\TEST\bin\Debug\TEST.pdb
+C:\Users\Petr\source\repos\LABA_3\TEST\obj\Debug\LABA_2_3_ATT_2.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\LABA_3\TEST\obj\Debug\LABA_2_3_ATT_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\LABA_3\TEST\obj\Debug\LABA_2_3_ATT_2.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\LABA_3\TEST\obj\Debug\TEST.exe
+C:\Users\Petr\source\repos\LABA_3\TEST\obj\Debug\TEST.pdb
