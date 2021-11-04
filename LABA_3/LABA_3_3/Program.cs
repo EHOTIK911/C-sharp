@@ -22,6 +22,7 @@ namespace LABA_3_3
             Console.Write("log: OPEN FILE");
             System.Threading.Thread.Sleep(600);
 
+
             //
             Console.Write("\nlog: READING FILE");
             for (int s = 0; s < 3; s++)
