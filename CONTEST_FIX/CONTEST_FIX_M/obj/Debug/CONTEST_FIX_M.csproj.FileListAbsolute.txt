@@ -5,3 +5,4 @@ C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_M\obj\Debug\CONTEST_FIX_M.csp
 C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_M\obj\Debug\CONTEST_FIX_M.csproj.CoreCompileInputs.cache
 C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_M\obj\Debug\CONTEST_FIX_M.exe
 C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_M\obj\Debug\CONTEST_FIX_M.pdb
+C:\Users\Petr\source\repos\CONTEST_FIX\CONTEST_FIX_M\obj\Debug\CONTEST_FIX_M.csproj.AssemblyReference.cache

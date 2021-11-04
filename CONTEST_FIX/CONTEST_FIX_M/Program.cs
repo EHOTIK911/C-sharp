@@ -40,8 +40,7 @@ namespace CONTEST_FIX_M
             {
                 arr.RemoveAt(s);
             }
-            int sum = arr.Sum();
-            Console.WriteLine(sum);
+            Console.WriteLine(arr.Sum());
             Console.ReadKey();
         }
     }
