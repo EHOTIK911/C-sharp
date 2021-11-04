@@ -30,14 +30,14 @@ namespace LABA_3_3
                 System.Threading.Thread.Sleep(800);
                 Console.Write(".");
             }
-
+            int count = 0;
             string pathFINAL = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_3\LABA_3_3_FINAL.txt";
             int max = 0, min = 0, max1 = 0, min1 = 0;
             // Открываем файл и записываем в список числа
             string path = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_3\LABA_3_3.txt";
-            List<string> NEW_LIST = new List<string>();
-            List<string> fileArray = File.ReadLines(path).Where(line => !string.IsNullOrWhiteSpace(line)).SelectMany(line => line.Split(new char[] { ' ', '\t' },StringSplitOptions.RemoveEmptyEntries)).ToList();
-            List<int> intList_X = NEW_LIST.ConvertAll(int.Parse);
+            //List<string> NEW_LIST = new List<string>();
+            List<string> fileArray = File.ReadLines(path).Where(line => !string.IsNullOrWhiteSpace(line)).SelectMany(line => line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)).ToList();
+            List<int> intList_X = fileArray.ConvertAll(int.Parse);
             List<int> intList_Y = new List<int>();
             //Находим максимум и минимум из списка
             int MAX_NUMBER = intList_X.Max();
@@ -49,19 +49,8 @@ namespace LABA_3_3
 
             }
             //Записываем данные из первого списка во второй
-            // Дублируем элементы
-            for (int r = 0; r < intList_X.Count; r++)
-            {
-                if ((intList_X[r] % 2.0 != 0) || (intList_X[r] == 0))
-                {
-                    intList_Y.Add(intList_X[r]);
-                }
-                else
-                {
-                    intList_Y.Add(intList_X[r]);
-                    intList_Y.Add(intList_X[r]);
-                }
-            }
+            // Дублируем элементы и формируем массив Y
+            FORM_MAS_Y(intList_X, intList_Y, count);
             // для массива(списка) с дубликатами находим максимум и минимум
             MAX_MIN_SECOND_MAS(ref max, ref min, intList_Y, MAX_NUMBER, MIN_NUMBER);
             //для изначального массива(списка) находим максимум и минимум
@@ -88,7 +77,7 @@ namespace LABA_3_3
 
             }
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("\nмассив без дубликатами");
+            Console.WriteLine("\nМассив без дубликатами");
             for (int i = 0; i < intList_X.Count; i++)
             {
                 Console.Write(intList_X[i] + " ");
@@ -103,6 +92,7 @@ namespace LABA_3_3
                 }
 
             }
+            Console.WriteLine("\nКоличество вхождений в массив " + (intList_Y.Count - intList_X.Count));
             // Делаем красиво
             Console.Write("\nlog: RECORDING FILE");
             for (int s = 0; s < 3; s++)
@@ -114,6 +104,25 @@ namespace LABA_3_3
             Console.WriteLine("\nlog: CLOSE FILE");
             Console.ReadKey();
         }
+
+        private static void FORM_MAS_Y(List<int> intList_X, List<int> intList_Y,int count)
+        {
+
+            for (int r = 0; r < intList_X.Count; r++)
+            {
+                if ((intList_X[r] % 2.0 != 0) || (intList_X[r] == 0))
+                {
+                    intList_Y.Add(intList_X[r]);
+                }
+                else
+                {
+                    intList_Y.Add(intList_X[r]);
+                    intList_Y.Add(intList_X[r]);
+                    count++;
+                }
+            }
+        }
+
         //Находим максимум и минимум во втором массиве(списке)
         private static void MAX_MIN_SECOND_MAS(ref int max, ref int min, List<int> intList_Y, int MAX_NUMBER, int MIN_NUMBER)
         {

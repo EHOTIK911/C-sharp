@@ -30,7 +30,12 @@
       "ProjectGuid": "b97816ae-d843-4d7a-a21b-7736fc71cf80",
       "DisplayName": "CONTEST_FIX_M",
       "ColorIndex": 5
+    },
+    "1e99a740-c087-4f71-a8d4-c6cb905b5663": {
+      "ProjectGuid": "1e99a740-c087-4f71-a8d4-c6cb905b5663",
+      "DisplayName": "CONTEST_FIX_J",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
