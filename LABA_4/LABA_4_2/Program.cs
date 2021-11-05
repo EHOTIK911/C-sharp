@@ -17,8 +17,8 @@ namespace LABA_4_2
         static void Main(string[] args)
         {
             //string[] qwerty = File.ReadAllLines("qwerty.txt");
-            char[] qwertw = new char[32];
-            using (StreamReader s2r = new StreamReader("qwerty2.txt"))
+            char[] qwertw = new char[26];
+            using (StreamReader s2r = new StreamReader("qwerty2eng.txt"))
             {
                 string line;
                 line = s2r.ReadLine();
@@ -37,6 +37,8 @@ namespace LABA_4_2
                     }
                     for (int i = 0; i < symbols.Length; i++)
                     {
+
+                        
                         for (int j = 0; j < qwertw.Length; j++)
                         {
                             if (symbols[i] == qwertw[j])
@@ -48,7 +50,7 @@ namespace LABA_4_2
                                     {
                                         file1.Write(str);
                                     }
-                                    j++;
+
                                 }
                                 else if (j + 1 == 32)
                                 {
@@ -57,10 +59,7 @@ namespace LABA_4_2
                                     {
                                         file1.Write(str);
                                     }
-                                    j++;
                                 }
-                                else
-                                    break;  
                             }
                         }
                     }
