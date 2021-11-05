@@ -12,30 +12,26 @@ namespace TEST1
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            var array = new int[] { 1, 2, 2, 1, 3 , 7, 5, 4, 3, 9, 7, 6, 5, 3, 8 };
-            int d = array.Length;
-            var result = array.Distinct().ToArray();
-            List<int> list = result.ToList();
-            
-            while(list.Count <= d)
+            List<int> MAS = new List<int>();
+            int LenMin_LenMax = rnd.Next(4, 4);
+            for (int i = 0; i < LenMin_LenMax; i++)
             {
-                list.Add(rnd.Next(1,10));
-                d--;
+
+                MAS.Add(rnd.Next(3, 7));
             }
-            for(int g = 0; g < list.Count; g++)
+            // Удаляю повторяющиеся элементы
+            MAS = MAS.Distinct().ToList();
+            //Проверяю на количество чисел в списке, если оно меньше, то мы заходим в while до тех пор, пока не получим результат
+            while (MAS.Count < LenMin_LenMax)
             {
-                for(int i = 0; i < list.Count; i++)
-                {
-                    if (list[g] == list[i])
-                    {
-                        list[g] = rnd.Next(1, 10);
-                    }
-                }
-                
-                
+                //Добавляем элемент
+                MAS.Add(rnd.Next(3, 7));
+                // Проверяем опять список на повторяющиеся элементы и удаляем их
+                MAS = MAS.Distinct().ToList();
+                //Мы заходим в while до тех пор, пока все элементы не будут различны
             }
-            for (int i = 0; i < list.Count; i++)
-                Console.WriteLine(list[i]);
+            for (int i = 0; i < MAS.Count; i++)
+                Console.Write(MAS[i]+ " ");
             Console.ReadKey();
 
         }

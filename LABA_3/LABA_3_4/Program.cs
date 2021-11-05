@@ -53,8 +53,8 @@ namespace LABA_3_4
                 else
                     Console.WriteLine("\n" + SetName + g);
                 int LenMin_LenMax = rnd.Next(LenMin, LenMax); // Генерируем случайно число чисел в массиве
-                int[] MAS = new int[LenMin_LenMax]; // Создаем массив int с количеством элементов LenMin_LenMax
-                double[] MAS_float = new double[LenMin_LenMax]; // Создаем массив double с количеством элементов LenMin_LenMax
+                List<int> MAS = new List<int> (); // Создаем массив int с количеством элементов LenMin_LenMax
+                List<double> MAS_float = new List<double>(); // Создаем массив double с количеством элементов LenMin_LenMax
                 Console.WriteLine(LenMin_LenMax);
                 if (Type == "int")
                 {
@@ -69,19 +69,25 @@ namespace LABA_3_4
                     }
                     if(Repeat == "no")
                     {
+                        //Заплняю список
                         for (int i = 0; i < LenMin_LenMax; i++)
                         {
-                            for(int j = 0; j < i; j++)
-                            {
 
-                                if(MAS[i] != MAS[j])
-                                {
-                                    MAS[i] = rnd.Next(Min, Max);
-                                }
-                            }
+                            MAS.Add(rnd.Next(Min, Max));
+                        }
+                        // Удаляю повторяющиеся элементы
+                        MAS = MAS.Distinct().ToList();
+                        //Проверяю на количество чисел в списке, если оно меньше, то мы заходим в while до тех пор, пока не получим результат
+                        while (MAS.Count < LenMin_LenMax)
+                        {
+                            //Добавляем элемент
+                            MAS.Add(rnd.Next(Min, Max));
+                            // Проверяем опять список на повторяющиеся элементы и удаляем их
+                            MAS = MAS.Distinct().ToList();
+                            //Мы заходим в while до тех пор, пока все элементы не будут различны
                         }
                     }
-                    
+
                     // Сортируем массив, при необходимости
                     if (Sort == "asc") // По убыванию
                     {
@@ -154,10 +160,33 @@ namespace LABA_3_4
                 // Случай с double
                 if (Type == "double") 
                 {
-                    // Заполняем массив double случайными числами
-                    for (int i = 0; i < LenMin_LenMax; i++)
+                    if (Repeat == "yes")
                     {
-                        MAS_float[i] = rnd.NextDouble() * (Max - Min) + Min+1;
+                        for (int i = 0; i < LenMin_LenMax; i++)
+                        {
+
+                            MAS_float[i] = rnd.NextDouble() * (Max - Min) + Min;
+                        }
+                    }
+                    if (Repeat == "no")
+                    {
+                        //Заплняю список
+                        for (int i = 0; i < LenMin_LenMax; i++)
+                        {
+
+                            MAS_float.Add(rnd.NextDouble() * (Max - Min) + Min);
+                        }
+                        // Удаляю повторяющиеся элементы
+                        MAS_float = MAS_float.Distinct().ToList();
+                        //Проверяю на количество чисел в списке, если оно меньше, то мы заходим в while до тех пор, пока не получим результат
+                        while (MAS_float.Count < LenMin_LenMax)
+                        {
+                            //Добавляем элемент
+                            MAS_float.Add(rnd.NextDouble() * (Max - Min) + Min);
+                            // Проверяем опять список на повторяющиеся элементы и удаляем их
+                            MAS_float = MAS_float.Distinct().ToList();
+                            //Мы заходим в while до тех пор, пока все элементы не будут различны
+                        }
                     }
                     // Сортируем массив, при необходимости
                     if (Sort == "asc") // По Убыванию
@@ -168,11 +197,7 @@ namespace LABA_3_4
                     {
                         SORT_DESC_DOUBLE(MAS_float);
                     }
-                    // Повторяющиеся элементы при необходимости ( В случае "yes" , случайные числа итак модгут повторяться)
-                    if (Repeat == "no")
-                    {
-                        REPEAT_NO_DOUBLE(rnd, Min, Max, LenMin_LenMax, MAS_float);
-                    }
+                    
                     // Стилизация вывода
                     if (TypeOut == "row") // Строка
                     {
@@ -227,11 +252,11 @@ namespace LABA_3_4
             Console.ReadKey();
         }
         // Метод для сортировки массива по возрастанию (int)
-        private static void SORT_ASC_INT(int[] MAS)
+        private static void SORT_ASC_INT(List<int> MAS)
         {
-            for (int i = 0; i < MAS.Length; i++)
+            for (int i = 0; i < MAS.Count; i++)
             {
-                for (int j = 0; j < MAS.Length - 1; j++)
+                for (int j = 0; j < MAS.Count - 1; j++)
                 {
                     if (MAS[j] > MAS[j + 1])
                     {
@@ -243,11 +268,11 @@ namespace LABA_3_4
             }
         }
         // Метод для сортировки массива по убыванию (int)
-        private static void SORT_DESC_INT(int[] MAS)
+        private static void SORT_DESC_INT(List<int> MAS)
         {
-            for (int i = 0; i < MAS.Length; i++)
+            for (int i = 0; i < MAS.Count; i++)
             {
-                for (int j = 0; j < MAS.Length - 1; j++)
+                for (int j = 0; j < MAS.Count - 1; j++)
                 {
                     if (MAS[j] < MAS[j + 1])
                     {
@@ -259,7 +284,7 @@ namespace LABA_3_4
             }
         }
         // Проверка на повторяющиеся элементы (int)
-        private static void REPEAT_NO_INT(Random rnd, int Min, int Max, int LenMin_LenMax, int[] MAS)
+        private static void REPEAT_NO_INT(Random rnd, int Min, int Max, int LenMin_LenMax, List<int> MAS)
         {
             var result = MAS.Distinct().ToArray();
             for (int l = 0; l < LenMin_LenMax; l++)
@@ -275,7 +300,7 @@ namespace LABA_3_4
             }
         }
         // Проверка на повторяющиеся элементы (double)
-        private static void REPEAT_NO_DOUBLE(Random rnd, int Min, int Max, int LenMin_LenMax, double[] MAS_float)
+        private static void REPEAT_NO_DOUBLE(Random rnd, int Min, int Max, int LenMin_LenMax, List<double> MAS_float)
         {
             for (int l = 0; l < LenMin_LenMax; l++)
             {
@@ -290,11 +315,11 @@ namespace LABA_3_4
             }
         }
         // Метод для сортировки массива по возрастанию (double)
-        private static void SORT_ASC_DOUBLE(double[] MAS_float)
+        private static void SORT_ASC_DOUBLE(List<double> MAS_float)
         {
-            for (int i = 0; i < MAS_float.Length; i++)
+            for (int i = 0; i < MAS_float.Count; i++)
             {
-                for (int j = 0; j < MAS_float.Length - 1; j++)
+                for (int j = 0; j < MAS_float.Count - 1; j++)
                 {
                     if (MAS_float[j] > MAS_float[j + 1])
                     {
@@ -306,11 +331,11 @@ namespace LABA_3_4
             }
         }
         // Метод для сортировки массива по убыванию (double)
-        private static void SORT_DESC_DOUBLE(double[] MAS_float)
+        private static void SORT_DESC_DOUBLE(List<double> MAS_float)
         {
-            for (int i = 0; i < MAS_float.Length; i++)
+            for (int i = 0; i < MAS_float.Count; i++)
             {
-                for (int j = 0; j < MAS_float.Length - 1; j++)
+                for (int j = 0; j < MAS_float.Count - 1; j++)
                 {
                     if (MAS_float[j] < MAS_float[j + 1])
                     {
