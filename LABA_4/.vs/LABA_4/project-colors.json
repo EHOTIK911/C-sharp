@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0dd22c9b-e1c9-4066-8e48-3f44ce039961": {
+      "ProjectGuid": "0dd22c9b-e1c9-4066-8e48-3f44ce039961",
+      "DisplayName": "LABA_4_1",
+      "ColorIndex": 0
+    },
+    "36b108c3-34f5-432a-a4ee-e843ca630ebc": {
+      "ProjectGuid": "36b108c3-34f5-432a-a4ee-e843ca630ebc",
+      "DisplayName": "LABA_4_2",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
