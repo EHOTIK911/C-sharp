@@ -16,9 +16,10 @@ namespace LABA_4_2
         }
         static void Main(string[] args)
         {
+                                                                            //... CODING ...\\
             //string[] qwerty = File.ReadAllLines("qwerty.txt");
-            char[] qwertw = new char[26];
-            using (StreamReader s2r = new StreamReader("qwerty2eng.txt"))
+            char[] qwertw = new char[33];
+            using (StreamReader s2r = new StreamReader("qwerty2.txt"))
             {
                 string line;
                 line = s2r.ReadLine();
@@ -37,16 +38,17 @@ namespace LABA_4_2
                     }
                     for (int i = 0; i < symbols.Length; i++)
                     {
-
                         
                         for (int j = 0; j < qwertw.Length; j++)
                         {
+
                             if (symbols[i] == qwertw[j])
                             {
+                                
                                 if (j + 1 < 32)
                                 {
                                     str = str.Replace(symbols[i], qwertw[j + 1]);
-                                    using (StreamWriter file1 = new StreamWriter("test.txt"))
+                                    using (StreamWriter file1 = new StreamWriter("coding.txt"))
                                     {
                                         file1.Write(str);
                                     }
@@ -55,7 +57,57 @@ namespace LABA_4_2
                                 else if (j + 1 == 32)
                                 {
                                     str = str.Replace(symbols[i], qwertw[0]);
-                                    using (StreamWriter file1 = new StreamWriter("test.txt"))
+                                    using (StreamWriter file1 = new StreamWriter("coding.txt"))
+                                    {
+                                        file1.Write(str);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+                                                                               //... DECODING ...\\
+
+
+
+            using (StreamReader sr = new StreamReader("coding.txt"))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    char[] symbols = line.ToCharArray();
+                    string str = string.Empty;
+                    using (StreamReader reader = File.OpenText("coding.txt"))
+                    {
+                        str = reader.ReadToEnd();
+                    }
+                    for (int i = 0; i < symbols.Length; i++)
+                    {
+
+                        for (int j = 0; j < qwertw.Length; j++)
+                        {
+
+                            if (symbols[i] == qwertw[j])
+                            {
+
+                                if (j + 1 < 32)
+                                {
+                                    str = str.Replace(symbols[i], qwertw[j - 1]);
+                                    using (StreamWriter file1 = new StreamWriter("decoding.txt"))
+                                    {
+                                        file1.Write(str);
+                                    }
+
+                                }
+                                else if (j - 1 == -1)
+                                {
+                                    str = str.Replace(symbols[i], qwertw[33]);
+                                    using (StreamWriter file1 = new StreamWriter("decoding.txt"))
                                     {
                                         file1.Write(str);
                                     }
