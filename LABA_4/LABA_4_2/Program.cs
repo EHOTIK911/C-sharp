@@ -16,104 +16,152 @@ namespace LABA_4_2
         }
         static void Main(string[] args)
         {
-                                                                            //... CODING ...\\
-            //string[] qwerty = File.ReadAllLines("qwerty.txt");
-            char[] qwertw = new char[33];
+            
+            string[] qwertw = new string[33];
             using (StreamReader s2r = new StreamReader("qwerty2.txt"))
             {
                 string line;
                 line = s2r.ReadLine();
-                qwertw = line.ToCharArray();
+                qwertw = File.ReadAllText("qwerty2.txt").Split(' ');
             }
-            using (StreamReader sr = new StreamReader("text.txt"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    char[] symbols = line.ToCharArray();
-                    string str = string.Empty;
-                    using (StreamReader reader = File.OpenText("text.txt"))
-                    {
-                        str = reader.ReadToEnd();
-                    }
-                    for (int i = 0; i < symbols.Length; i++)
-                    {
-                        
-                        for (int j = 0; j < qwertw.Length; j++)
-                        {
+            //...  CODING  ...\\
+            CODING(qwertw);
+            //... DECODING ...\\
 
-                            if (symbols[i] == qwertw[j])
-                            {
-                                
-                                if (j + 1 < 32)
-                                {
-                                    str = str.Replace(symbols[i], qwertw[j + 1]);
-                                    using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                    {
-                                        file1.Write(str);
-                                    }
+            DE_CODING(qwertw);
+        }
 
-                                }
-                                else if (j + 1 == 32)
-                                {
-                                    str = str.Replace(symbols[i], qwertw[0]);
-                                    using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                    {
-                                        file1.Write(str);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-
-
-
-                                                                               //... DECODING ...\\
-
-
-
+        private static void DE_CODING(string[] qwertw)
+        {
             using (StreamReader sr = new StreamReader("coding.txt"))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    char[] symbols = line.ToCharArray();
-                    string str = string.Empty;
-                    using (StreamReader reader = File.OpenText("coding.txt"))
-                    {
-                        str = reader.ReadToEnd();
-                    }
+                    string[] symbols = File.ReadAllLines("coding.txt");
+
+
                     for (int i = 0; i < symbols.Length; i++)
                     {
-
-                        for (int j = 0; j < qwertw.Length; j++)
+                        string str = symbols[i];
+                        for (int g = 0; g < str.Length; g++)
                         {
-
-                            if (symbols[i] == qwertw[j])
+                            bool flag = true;
+                            int count = 0;
+                            for (int g2 = 0; g2 < qwertw.Length; g2++)
                             {
-
-                                if (j + 1 < 32)
+                                if (str[g].ToString() == qwertw[g2])
                                 {
-                                    str = str.Replace(symbols[i], qwertw[j - 1]);
+                                    count = g2;
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag == false)
+                            {
+                                if (count - 1 == -1)
+                                {
+                                    str = str.Remove(g, 1);
+                                    str = str.Insert(g, qwertw[31].ToString());
                                     using (StreamWriter file1 = new StreamWriter("decoding.txt"))
                                     {
                                         file1.Write(str);
                                     }
-
                                 }
-                                else if (j - 1 == -1)
+                                else
                                 {
-                                    str = str.Replace(symbols[i], qwertw[33]);
+                                    str = str.Remove(g, 1);
+                                    str = str.Insert(g, qwertw[count - 1].ToString());
                                     using (StreamWriter file1 = new StreamWriter("decoding.txt"))
                                     {
                                         file1.Write(str);
                                     }
                                 }
                             }
+
                         }
+
+                    }
+                }
+            }
+        }
+
+        private static void CODING(string[] qwertw)
+        {
+            using (StreamReader sr = new StreamReader("text.txt"))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] symbols = File.ReadAllLines("text.txt");
+
+
+                    for (int i = 0; i < symbols.Length; i++)
+                    {
+                        string str = symbols[i];
+                        for (int g = 0; g < str.Length; g++)
+                        {
+                            bool flag = true;
+                            int count = 0;
+                            for (int g2 = 0; g2 < qwertw.Length; g2++)
+                            {
+                                if (str[g].ToString() == qwertw[g2])
+                                {
+                                    count = g2;
+                                    flag = false;
+                                    break;
+                                }
+                            }
+                            if (flag == false)
+                            {
+                                if (count + 1 == 32)
+                                {
+                                    if( str[g].ToString() == qwertw[count].ToUpper())
+                                    {
+                                        str = str.Remove(g, 1);
+                                        str = str.Insert(g, qwertw[0].ToString().ToUpper());
+                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
+                                        {
+                                            file1.Write(str);
+                                        }
+                                       
+                                    }
+                                    else
+                                    {
+                                        str = str.Remove(g, 1);
+                                        str = str.Insert(g, qwertw[0].ToString());
+                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
+                                        {
+                                            file1.Write(str);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (str[g].ToString() == qwertw[count].ToUpper())
+                                    {
+                                        str = str.Remove(g, 1);
+                                        str = str.Insert(g, qwertw[count+1].ToString().ToUpper());
+                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
+                                        {
+                                            file1.Write(str);
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        str = str.Remove(g, 1);
+                                        str = str.Insert(g, qwertw[count + 1].ToString());
+                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
+                                        {
+                                            file1.Write(str);
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
                     }
                 }
             }

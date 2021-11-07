@@ -8,66 +8,46 @@ namespace CONTEST_A
 {
     internal class Program
     {
+        static int[] input()
+        {
+            int[] numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToArray<int>();
+            return numbers;
+        }
         static void Main(string[] args)
         {
-
-            int I = 0, p = 0, MAX_COUNT = 0; int N = int.Parse(Console.ReadLine()); List<long> MAS_1 = new List<long>(); List<long> MAS_2 = new List<long>();
-            for (int i = 0; i < N; i++)
-                MAS_1.Add(long.Parse(Console.ReadLine()));
-            int M = int.Parse(Console.ReadLine());
-            for (int i = 0; i < M; i++)
-                MAS_2.Add(long.Parse(Console.ReadLine()));
-            MAS_1.Sort(); MAS_2.Sort(); bool flag2, flag; NewMethod1(MAS_1, out flag2, out flag); p = MAS_2.Count - 1;
-            flag = true;
-            for (int i = 0; i < MAS_1.Count; i++)
+            int count = 0;
+            int max = 0;
+            int test = 0;
+            int f = Convert.ToInt32(Console.ReadLine());
+            int[] MAS = input();
+            for(int i = 0; i < MAS.Length-1; i++)
             {
-                NewMethod(ref I, p, ref MAX_COUNT, MAS_1, MAS_2, ref flag2, i);
+                count = 0;
+                for (int g = 0; g < MAS.Length - 1; g++)
+                {
+                    if(MAS[i] == MAS[g])
+                    {
+                        count++;
+                    }
+
+                }
+                if (count > max) 
+                {
+                    max = count;
+                    test = MAS[i];
+                }
+                
+
             }
-            Console.WriteLine(MAX_COUNT);
+
+            if(max == 1)
+            {
+                test = 0;
+            }
+
+            Console.WriteLine(test);
             Console.ReadKey();
         }
 
-        private static void NewMethod1(List<long> MAS_1, out bool flag2, out bool flag)
-        {
-            flag2 = true;
-            flag = true;
-            while (flag != false)
-            {
-                flag = false;
-                for (int i = 0; i < MAS_1.Count; i++)
-                {
-                    if (i != 0)
-                    {
-
-                        if (MAS_1[i] == MAS_1[i - 1])
-                        {
-                            flag = true;
-                            MAS_1.RemoveAt(i - 1);
-                        }
-                    }
-                }
-            }
-        }
-
-        private static void NewMethod(ref int I, int p, ref int MAX_COUNT, List<long> MAS_1, List<long> MAS_2, ref bool flag2, int i)
-        {
-            while ((MAS_2[I] < MAS_1[i]) && (I != MAS_2.Count - 1))
-                I++;
-            while ((MAS_2[I] == MAS_1[i]) && (I < MAS_2.Count - 1))
-            {
-                MAX_COUNT++;
-                I = I + 1;
-            }
-            for (int f = 0; f < MAS_1.Count; f++)
-            {
-                if ((MAS_2[p] == MAS_1[i]) && (flag2 == true))
-                {
-                    flag2 = false;
-                    MAX_COUNT++;
-                }
-                else
-                    break;
-            }
-        }
     }
 }

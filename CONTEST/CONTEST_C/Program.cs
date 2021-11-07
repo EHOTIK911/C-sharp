@@ -8,45 +8,31 @@ namespace CONTEST_C
 {
     class Program
     {
-        static double[] input()
+        static List<int> input()
         {
-            double[] numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => double.Parse(i)).ToArray<double>();
+            List<int> numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToList();
             return numbers;
         }
 
         static void Main(string[] args)
         {
-            double fin = 0,answer = 0;
-            string[] strings = Console.ReadLine().Split(' ');
-            int k = int.Parse(strings[0]);
-            int R = int.Parse(strings[1]);
-            double[] MAS = input();
-            double SUM = 0;
-            int[] List = Enumerable.Range(1, 100000).ToArray();
-
-            for (int i = 0; i < k; i++)
+            int count1 = 0;
+            int count = 0;
+            int d = Convert.ToInt32(Console.ReadLine());
+            
+            List<int> HOME = input();
+            for(int i = 0; i < HOME.Count-1; i++)
             {
-                SUM += MAS[i];
+                if (HOME[i] != HOME[i + 1])
+                {
+                    count++;
+                }
             }
-            if(SUM > 2 * R)
+            if(HOME[HOME.Count-1] != HOME[HOME.Count - 2])
             {
-                
-                
+                count++;
             }
-            for (int i = 0; i < k; i++)
-            {
-                fin += (1 / MAS[i]) + (1 / x);
-                answer += fin;
-                if (Math.Round(Math.Pow(answer, -1)) == R)
-                    {
-                        Console.WriteLine(Math.Round(Math.Pow(answer, -1)));
-                    }
-                answer = 0;
-
-            }
-
-
-
+            Console.WriteLine(count);
             Console.ReadKey();
             
         }
