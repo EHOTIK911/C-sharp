@@ -10,59 +10,55 @@ namespace CONTEST_B
     {
 
 
-        private static int binSearch_rigth(int[] a, int key)
-        {
-            int l = -1;
-            int r = a.Length;
-            while (l < r - 1)
-            {
-                int m = (l + r) / 2;
-                if (a[m] > key)
-                    r = m;
-                else
-                    l = m;
-            }
 
-            return l;
-        }
 
         static void Main(string[] args)
         {
 
-            int N = int.Parse(Console.ReadLine());
-            int[] arr = input();
-            int M = int.Parse(Console.ReadLine());
-            int[] arr2 = input();
-            for (int i = 0; i < M; i++)
-            {
-                Console.WriteLine(binSearch_rigth(arr, arr2[i]) - binSearch_left(arr, arr2[i]) + 1);
-            }
 
 
+            int min = 1000;
+            string[] value = Console.ReadLine().Split(' ');
+            int n = int.Parse(value[0]);
+            int k = int.Parse(value[1]);
+            int[] a = new int[100001];
+            NewMethod1(n, k, a);
+            min = NewMethod(min, n, a);
+            Console.WriteLine(min);
             Console.ReadKey();
 
 
 
         }
-        static int[] input()
+
+        private static void NewMethod1(int n, int k, int[] a)
         {
-            int[] numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToArray<int>();
-            return numbers;
-        }
-        private static int binSearch_left(int[] a, int key)
-        {
-            int l = -1;
-            int r = a.Length;
-            while (l < r - 1)
+            for (int i = 0; i < n; i++)
             {
-                int m = (l + r) / 2;
-                if (a[m] < key)
-                    l = m;
-                else
-                    r = m;
+                List<int> List = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(l => int.Parse(l)).ToList();
+                for (int j = 0; j < k; j++)
+                {
+
+                    a[List[j]] = a[List[j]] + 1;
+                }
+
+            }
+        }
+
+        private static int NewMethod(int min, int n, int[] a)
+        {
+            for (int i = 1; i < 100001; i++)
+            {
+                if (a[i] == n)
+                {
+                    min = i;
+                    break;
+                }
             }
 
-            return r;
+            return min;
         }
+
+        
     }
 }

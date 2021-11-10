@@ -15,39 +15,45 @@ namespace CONTEST_A
         }
         static void Main(string[] args)
         {
-            int count = 0;
+
+            bool flag = true;
             int max = 0;
             int test = 0;
             int f = Convert.ToInt32(Console.ReadLine());
             int[] MAS = input();
-            for(int i = 0; i < MAS.Length-1; i++)
-            {
-                count = 0;
-                for (int g = 0; g < MAS.Length - 1; g++)
-                {
-                    if(MAS[i] == MAS[g])
-                    {
-                        count++;
-                    }
-
-                }
-                if (count > max) 
-                {
-                    max = count;
-                    test = MAS[i];
-                }
-                
-
-            }
-
-            if(max == 1)
-            {
-                test = 0;
-            }
-
-            Console.WriteLine(test);
+            int[] CT = new int[MAS.Max()];
+            TEST1(CT);
+            TEST2(MAS, CT);
+            flag = PRINT_TRUE(flag, f, CT);
+            if (flag == true)
+                Console.WriteLine(0);
             Console.ReadKey();
         }
 
+        private static bool PRINT_TRUE(bool flag, int f, int[] CT)
+        {
+            for (int i = 0; CT.Length > i; i++)
+            {
+                if (CT[i] > f / 2f)
+                {
+                    flag = false;
+                    Console.WriteLine(i + 1 + " ");
+                }
+            }
+
+            return flag;
+        }
+
+        private static void TEST2(int[] MAS, int[] CT)
+        {
+            for (int i = 0; i < MAS.Length; i++)
+                CT[MAS[i] - 1] = CT[MAS[i] - 1] + 1;
+        }
+
+        private static void TEST1(int[] CT)
+        {
+            for (int i = 0; i < CT.Length; i++)
+                CT[i] = 0;
+        }
     }
 }

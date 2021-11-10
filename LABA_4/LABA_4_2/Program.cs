@@ -63,18 +63,23 @@ namespace LABA_4_2
                                 {
                                     str = str.Remove(g, 1);
                                     str = str.Insert(g, qwertw[31].ToString());
+                                    
                                     using (StreamWriter file1 = new StreamWriter("decoding.txt"))
                                     {
-                                        file1.Write(str);
+                                        file1.WriteLine(str);
+                           
                                     }
                                 }
                                 else
                                 {
                                     str = str.Remove(g, 1);
                                     str = str.Insert(g, qwertw[count - 1].ToString());
+                                    
                                     using (StreamWriter file1 = new StreamWriter("decoding.txt"))
                                     {
-                                        file1.Write(str);
+
+                                        file1.WriteLine(str);
+                                    
                                     }
                                 }
                             }
@@ -122,7 +127,8 @@ namespace LABA_4_2
                                         str = str.Insert(g, qwertw[0].ToString().ToUpper());
                                         using (StreamWriter file1 = new StreamWriter("coding.txt"))
                                         {
-                                            file1.Write(str);
+                                            file1.WriteLine(str);
+                                          
                                         }
                                        
                                     }
@@ -132,7 +138,8 @@ namespace LABA_4_2
                                         str = str.Insert(g, qwertw[0].ToString());
                                         using (StreamWriter file1 = new StreamWriter("coding.txt"))
                                         {
-                                            file1.Write(str);
+                                            file1.WriteLine(str);
+
                                         }
                                     }
                                 }
@@ -144,7 +151,8 @@ namespace LABA_4_2
                                         str = str.Insert(g, qwertw[count+1].ToString().ToUpper());
                                         using (StreamWriter file1 = new StreamWriter("coding.txt"))
                                         {
-                                            file1.Write(str);
+                                            file1.WriteLine(str);
+                                           
                                         }
 
                                     }
@@ -154,7 +162,8 @@ namespace LABA_4_2
                                         str = str.Insert(g, qwertw[count + 1].ToString());
                                         using (StreamWriter file1 = new StreamWriter("coding.txt"))
                                         {
-                                            file1.Write(str);
+                                            file1.WriteLine(str);
+                                            
                                         }
                                     }
                                 }
