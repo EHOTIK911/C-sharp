@@ -1,6 +1,8 @@
 ﻿/*lab 2
  * Novikov Petr IB-11
  * While. Summa posledovatel'nosti
+TASK
+https://i.imgur.com/lKFYBE2.png
  */
 using System;
 using System.Collections.Generic;
@@ -125,11 +127,7 @@ namespace LABA_2_1_ATT_2
 }
 
 /*
- * TEST 01
-0 1
-15
-0.1
- * TEST 02
+ * TEST
 -1 0
 15
 0.1

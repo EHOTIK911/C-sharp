@@ -1,6 +1,7 @@
 ﻿/*lab 3
  * Novikov Petr IB-11
  * Obrabotka posledovatel'nosti
+ * https://i.imgur.com/JMznE2f.png
  */
 using System;
 using System.Collections.Generic;

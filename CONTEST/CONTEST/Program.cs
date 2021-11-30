@@ -3,57 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CONTEST_A
 {
-    internal class Program
+    class Program
     {
-        static int[] input()
-        {
-            int[] numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToArray<int>();
-            return numbers;
-        }
-        static void Main(string[] args)
-        {
 
-            bool flag = true;
-            int max = 0;
-            int test = 0;
-            int f = Convert.ToInt32(Console.ReadLine());
-            int[] MAS = input();
-            int[] CT = new int[MAS.Max()];
-            TEST1(CT);
-            TEST2(MAS, CT);
-            flag = PRINT_TRUE(flag, f, CT);
-            if (flag == true)
-                Console.WriteLine(0);
-            Console.ReadKey();
-        }
-
-        private static bool PRINT_TRUE(bool flag, int f, int[] CT)
+        static void Main(string[] _1)
         {
-            for (int i = 0; CT.Length > i; i++)
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= n-1; i++)
             {
-                if (CT[i] > f / 2f)
+                for (int j = 1; j <= n-1; j++)
                 {
-                    flag = false;
-                    Console.WriteLine(i + 1 + " ");
+                    string s = "" + ((i * j) / n) + ((i * j) % n) + " ";
+                    if(s[0] == '0')
+                    {
+                        s = s.Remove(0, 1);
+                    }
+                    Console.Write(s);
                 }
+                Console.WriteLine();
             }
-
-            return flag;
-        }
-
-        private static void TEST2(int[] MAS, int[] CT)
-        {
-            for (int i = 0; i < MAS.Length; i++)
-                CT[MAS[i] - 1] = CT[MAS[i] - 1] + 1;
-        }
-
-        private static void TEST1(int[] CT)
-        {
-            for (int i = 0; i < CT.Length; i++)
-                CT[i] = 0;
         }
     }
 }

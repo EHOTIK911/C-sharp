@@ -1,64 +1,88 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.IO;
+
 
 namespace CONTEST_B
 {
     class Program
     {
-
-
-
-
         static void Main(string[] args)
         {
 
-
-
-            int min = 1000;
-            string[] value = Console.ReadLine().Split(' ');
-            int n = int.Parse(value[0]);
-            int k = int.Parse(value[1]);
-            int[] a = new int[100001];
-            NewMethod1(n, k, a);
-            min = NewMethod(min, n, a);
-            Console.WriteLine(min);
-            Console.ReadKey();
-
-
-
+            int O = 0;string[] MASSIV = File.ReadAllLines("input.txt");int MAXIMUM = MASSIV[1].Length;
+            StreamWriter RE = new StreamWriter("output.txt");
+            NULL_STRING(MASSIV, MAXIMUM);O = CASE_BASE_PROGRAM(O, MASSIV, MAXIMUM, RE);
+            RE.Close();
         }
 
-        private static void NewMethod1(int n, int k, int[] a)
+        private static int CASE_BASE_PROGRAM(int O, string[] MASSIV, int MAXIMUM, StreamWriter RE)
         {
-            for (int i = 0; i < n; i++)
+            if (MASSIV.Length - 1 > 1)
             {
-                List<int> List = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(l => int.Parse(l)).ToList();
-                for (int j = 0; j < k; j++)
-                {
+                while (O < MAXIMUM)
+                    O = WHILE_METHOD(O, MASSIV, RE);
+            }
+            else
+            {
+                string STRING = MASSIV[1];
+                for (int i = 0; i < MASSIV[1].Length; i++)
+                    PRINT_1(RE, STRING, i);
+            }
 
-                    a[List[j]] = a[List[j]] + 1;
-                }
+            return O;
+        }
 
+        private static void PRINT_1(StreamWriter RE, string STRING, int i)
+        {
+            if (STRING[i] == '?')
+                RE.Write("a" + "");
+            else
+                RE.Write(STRING[i] + "");
+        }
+
+        private static int WHILE_METHOD(int O, string[] MASSIV, StreamWriter RE)
+        {
+            bool FLAG_1 = true, FLAG_2 = true;
+            char SIGN_1 = MASSIV[1][O];
+            for (int i = 2; i < MASSIV.Length; i++)
+                BASE_CODE(O, MASSIV, ref FLAG_1, ref FLAG_2, ref SIGN_1, i);
+            if (FLAG_2 == true && SIGN_1 != '?')
+                RE.Write(SIGN_1.ToString());
+            if (FLAG_2 == false)
+                RE.Write("?");
+            if (SIGN_1 == '?' && FLAG_2 == true)
+                RE.Write("a");
+            O++;
+            return O;
+        }
+
+        private static void BASE_CODE(int O, string[] MASSIV, ref bool FLAG_1, ref bool FLAG_2, ref char SIGN_1, int i)
+        {
+            char SIGN_2 = MASSIV[i][O];
+            if ((SIGN_2.ToString() == "?" && FLAG_1 == true && SIGN_2 != SIGN_1) || (SIGN_1.ToString() == "?" && FLAG_1 == true && SIGN_2 != SIGN_1))
+            {
+                FLAG_1 = false;
+                if (SIGN_1.ToString() == "?")
+                    SIGN_1 = SIGN_2;
+            }
+
+            if (SIGN_2 != SIGN_1 && SIGN_2.ToString() != "?" && SIGN_1.ToString() != "?" && FLAG_2 == true && SIGN_2 != SIGN_1)
+            {
+                FLAG_2 = false;
+                SIGN_1 = '?';
             }
         }
 
-        private static int NewMethod(int min, int n, int[] a)
+        private static void NULL_STRING(string[] MASSIV, int MAXIMUM)
         {
-            for (int i = 1; i < 100001; i++)
-            {
-                if (a[i] == n)
-                {
-                    min = i;
-                    break;
-                }
-            }
-
-            return min;
+            for (int H = 1; H < MASSIV.Length; H++)
+                FORM_MASSIV(MASSIV, MAXIMUM, H);
         }
 
-        
+        private static void FORM_MASSIV(string[] MASSIV, int MAXIMUM, int H)
+        {
+            while (MASSIV[H].Length < MAXIMUM)
+                MASSIV[H] += "?";
+        }
     }
 }

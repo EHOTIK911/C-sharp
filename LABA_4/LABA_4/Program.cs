@@ -24,12 +24,12 @@ namespace LABA_4_1
             }
             return true;
         }
-        static bool IsPalindromInternal(string str)
-        {
-            if (str.Length == 1 || string.IsNullOrEmpty(str)) return true;
-            if (!str[0].Equals(str[str.Length - 1])) return false;
-            return IsPalindromInternal(str.Substring(1, str.Length - 2));
-        }
+        //static bool IsPalindromInternal(string str)
+        //{
+        //    if (str.Length == 1 || string.IsNullOrEmpty(str)) return true;
+        //    if (!str[0].Equals(str[str.Length - 1])) return false;
+        //    return IsPalindromInternal(str.Substring(1, str.Length - 2));
+        //}
         static void Main(string[] args)
         {
             //string[] file_name = File.ReadAllLines("text.txt");
@@ -65,8 +65,6 @@ namespace LABA_4_1
                             }
                         }
                     }
-                    
-                    
                 }
                 
                 

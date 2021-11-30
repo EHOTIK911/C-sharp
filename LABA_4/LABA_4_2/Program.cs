@@ -9,171 +9,101 @@ namespace LABA_4_2
 {
     internal class Program
     {
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            
-        }
         static void Main(string[] args)
         {
+
+            // строка символов на клавиатуре и следующий за ней символ
+            string KeyStr1 = "йцукенгшщзхъйфывапролджэфячсмитьбюяЙЦУКЕНГШЩЗХЪЙФЫВАПРОЛДЖЭФЯЧСМИТЬБЮЯ";
+            // файл с текстом
+            string path = "text.txt";
+            // файл с зашифрованным текстом
+            string writePath = "shifr.txt";
+            string writePath1 = "DEshifr.txt";
+            // очищаем файл
+            StreamWriter sw = new StreamWriter(writePath, false);
+            sw.Close();
+            StreamWriter sw1 = new StreamWriter(writePath1, false);
+            sw1.Close();
             
-            string[] qwertw = new string[33];
-            using (StreamReader s2r = new StreamReader("qwerty2.txt"))
+            //CODING
+            using (StreamReader sr = new StreamReader(path))
             {
-                string line;
-                line = s2r.ReadLine();
-                qwertw = File.ReadAllText("qwerty2.txt").Split(' ');
-            }
-            //...  CODING  ...\\
-            CODING(qwertw);
-            //... DECODING ...\\
-
-            DE_CODING(qwertw);
-        }
-
-        private static void DE_CODING(string[] qwertw)
-        {
-            using (StreamReader sr = new StreamReader("coding.txt"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                string orig_line;
+                // пока не закончились строки в файле
+                while ((orig_line = sr.ReadLine()) != null)
                 {
-                    string[] symbols = File.ReadAllLines("coding.txt");
-
-
-                    for (int i = 0; i < symbols.Length; i++)
+                    // k-тый символ строки текста
+                    int k = 0;
+                    // временная строка с шифром
+                    string newline = "";
+                    while (newline.Length != orig_line.Length)
                     {
-                        string str = symbols[i];
-                        for (int g = 0; g < str.Length; g++)
+                        // чекер на кириллицу, кроме ё
+                        bool c = true;
+                        for (int i = 0; i < KeyStr1.Length; i++)
                         {
-                            bool flag = true;
-                            int count = 0;
-                            for (int g2 = 0; g2 < qwertw.Length; g2++)
+                            // если находим символ, записываем следующий за ним (согласно варианту)
+                            if (orig_line[k] == KeyStr1[i])
                             {
-                                if (str[g].ToString() == qwertw[g2])
-                                {
-                                    count = g2;
-                                    flag = false;
-                                    break;
-                                }
+                                newline += KeyStr1[i + 1];
+                                c = false;
+                                break;
                             }
-                            if (flag == false)
-                            {
-                                if (count - 1 == -1)
-                                {
-                                    str = str.Remove(g, 1);
-                                    str = str.Insert(g, qwertw[31].ToString());
-                                    
-                                    using (StreamWriter file1 = new StreamWriter("decoding.txt"))
-                                    {
-                                        file1.WriteLine(str);
-                           
-                                    }
-                                }
-                                else
-                                {
-                                    str = str.Remove(g, 1);
-                                    str = str.Insert(g, qwertw[count - 1].ToString());
-                                    
-                                    using (StreamWriter file1 = new StreamWriter("decoding.txt"))
-                                    {
-
-                                        file1.WriteLine(str);
-                                    
-                                    }
-                                }
-                            }
-
                         }
-
+                        // если символ не кириллица, кроме ё, то записываем символ как есть
+                        if (c)
+                        {
+                            newline += orig_line[k];
+                        }
+                        k++;
+                    }
+                    // для печати
+                    using (sw = new StreamWriter(writePath, true))
+                    {
+                        sw.WriteLine(newline);
                     }
                 }
             }
-        }
-
-        private static void CODING(string[] qwertw)
-        {
-            using (StreamReader sr = new StreamReader("text.txt"))
+            //DECODING
+            using (StreamReader sr = new StreamReader(path))
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                string orig_line;
+                // пока не закончились строки в файле
+                while ((orig_line = sr.ReadLine()) != null)
                 {
-                    string[] symbols = File.ReadAllLines("text.txt");
-
-
-                    for (int i = 0; i < symbols.Length; i++)
+                    // k-тый символ строки текста
+                    int k = 0;
+                    // временная строка с шифром
+                    string newline = "";
+                    while (newline.Length != orig_line.Length)
                     {
-                        string str = symbols[i];
-                        for (int g = 0; g < str.Length; g++)
+                        // чекер на кириллицу, кроме ё
+                        bool c = true;
+                        for (int i = KeyStr1.Length-1; i > 0 ; i--)
                         {
-                            bool flag = true;
-                            int count = 0;
-                            for (int g2 = 0; g2 < qwertw.Length; g2++)
+                            // если находим символ, записываем следующий за ним (согласно варианту)
+                            if (orig_line[k] == KeyStr1[i])
                             {
-                                if (str[g].ToString() == qwertw[g2])
-                                {
-                                    count = g2;
-                                    flag = false;
-                                    break;
-                                }
+                                newline += KeyStr1[i];
+                                c = false;
+                                break;
                             }
-                            if (flag == false)
-                            {
-                                if (count + 1 == 32)
-                                {
-                                    if( str[g].ToString() == qwertw[count].ToUpper())
-                                    {
-                                        str = str.Remove(g, 1);
-                                        str = str.Insert(g, qwertw[0].ToString().ToUpper());
-                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                        {
-                                            file1.WriteLine(str);
-                                          
-                                        }
-                                       
-                                    }
-                                    else
-                                    {
-                                        str = str.Remove(g, 1);
-                                        str = str.Insert(g, qwertw[0].ToString());
-                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                        {
-                                            file1.WriteLine(str);
-
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (str[g].ToString() == qwertw[count].ToUpper())
-                                    {
-                                        str = str.Remove(g, 1);
-                                        str = str.Insert(g, qwertw[count+1].ToString().ToUpper());
-                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                        {
-                                            file1.WriteLine(str);
-                                           
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        str = str.Remove(g, 1);
-                                        str = str.Insert(g, qwertw[count + 1].ToString());
-                                        using (StreamWriter file1 = new StreamWriter("coding.txt"))
-                                        {
-                                            file1.WriteLine(str);
-                                            
-                                        }
-                                    }
-                                }
-                            }
-
                         }
-
+                        // если символ не кириллица, кроме ё, то записываем символ как есть
+                        if (c)
+                        {
+                            newline += orig_line[k];
+                        }
+                        k++;
+                    }
+                    // для печати
+                    using (sw = new StreamWriter(writePath1, true))
+                    {
+                        sw.WriteLine(newline);
                     }
                 }
             }
+
         }
     }
 }

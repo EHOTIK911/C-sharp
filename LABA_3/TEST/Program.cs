@@ -1,6 +1,9 @@
 ﻿/*lab 2
  * Novikov Petr IB-11
  * Obrabotka posledovatel'nosti
+ * TEST
+ * 
+ * https://i.imgur.com/k523uuj.png
  */
 using System;
 using System.Collections.Generic;
@@ -16,72 +19,75 @@ namespace LABA_2_3_ATT_2
 
         static void Main(string[] args)
         {
-            int s = 0;
-            int k = 0;
+            Console.WriteLine("Введите количество троек");
             int n = int.Parse(Console.ReadLine());
-            // Создаем массив четверок
-            int[] a = new int[4] { 0, 4, 4, 4 };
-            for (int i = 0; i < n; i++)
+            Console.WriteLine("Вводите тройки");
+
+            int[] ost = new int[4];
+
+            string[] troik = Console.ReadLine().Split(' ');
+
+            int aa = int.Parse(troik[0]),
+            bb = int.Parse(troik[1]),
+            cc = int.Parse(troik[2]);
+
+            int ssumm = aa + bb;
+            int ssumm2 = aa + cc;
+            int ssumm3 = bb + cc;
+            if (ost[ssumm % 4] < ssumm)
             {
-                string[] input = Console.ReadLine().Split(' ');
-                int a1 = Convert.ToInt32(input[0]);
-                int a2 = Convert.ToInt32(input[1]);
-                int a3 = Convert.ToInt32(input[2]);
-                // Если первый элемент больше второго
-                if (a1 > a2)
-                {
-                    // И если трети элемент больше второго
-                    if (a3 > a2)
-                    {
-                        s += (a1 + a3);
-                    }
-                    else
-                    {
-                        s += (a1 + a2);
-                    }
-                }
-                else
-                {
-                    if (a1 > a3)
-                    {
-                        s += (a1 + a2);
-                    }
-                    else
-                    {
-                        s += (a3 + a2);
-                    }
-                }
-                // Находим разницу между первым и вторым элементом
-                int abs = Math.Abs(a1 - a2);
-                // Находи остаток от деления на 4
-                k = abs % 4;
-                if ((k > 0) && (abs < a[k]))
-                {
-                    a[k] = abs;
-                }
-                // Находим разницу между первым и третьим элементом
-                abs = Math.Abs(a1 - a3);
-                k = abs % 4;
-                if ((k > 0) && (abs < a[k]))
-                {
-                    a[k] = abs;
-                }
-                // Находим разницу между третьми и вторым элементом
-                abs = Math.Abs(a3 - a2);
-                k = abs % 4;
-                if ((k > 0) && (abs < a[k]))
-                {
-                    a[k] = abs;
-                }
+                ost[ssumm % 4] = ssumm;
             }
-            if ((s % 4 > 0) && (a[(s % 4)] != 4))
+            if (ost[ssumm2 % 4] < ssumm2)
             {
-                Console.WriteLine(s - a[(s % 4)]);
+                ost[ssumm2 % 4] = ssumm2;
             }
-            else
+            if (ost[ssumm3 % 4] < ssumm3)
             {
-                Console.WriteLine(0);
+                ost[ssumm3 % 4] = ssumm3;
             }
+
+            for (int i = 1; i < n; i++)
+            {
+                string[] troiki = Console.ReadLine().Split(' ');
+                int a = int.Parse(troiki[0]),
+                b = int.Parse(troiki[1]),
+                c = int.Parse(troiki[2]);
+
+                int[] ostat2 = new int[4];
+                for (int j = 0; j < ostat2.Length; j++)
+                {
+                    if (ost[j] == 0)
+                    {
+                        continue;
+                    }
+                    int summ = ost[j] + a + b;
+                    int summ2 = ost[j] + a + c;
+                    int summ3 = ost[j] + b + c;
+                    if (ostat2[summ % 4] < summ)
+                    {
+                        ostat2[summ % 4] = summ;
+                    }
+                    if (ostat2[summ2 % 4] < summ2)
+                    {
+                        ostat2[summ2 % 4] = summ2;
+                    }
+                    if (ostat2[summ3 % 4] < summ3)
+                    {
+                        ostat2[summ3 % 4] = summ3;
+                    }
+
+
+                }
+                for (int k = 0; k < 4; k++)
+                {
+                    ost[k] = ostat2[k];
+                }
+
+
+            }
+
+            Console.WriteLine(ost[0]);
             Console.ReadKey();
         }
     }

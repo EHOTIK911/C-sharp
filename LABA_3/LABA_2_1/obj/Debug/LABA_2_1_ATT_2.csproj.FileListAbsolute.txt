@@ -5,3 +5,4 @@ C:\Users\Petr\source\repos\LABA_3\LABA_2_1\obj\Debug\LABA_2_1_ATT_2.csproj.Sugge
 C:\Users\Petr\source\repos\LABA_3\LABA_2_1\obj\Debug\LABA_2_1_ATT_2.csproj.CoreCompileInputs.cache
 C:\Users\Petr\source\repos\LABA_3\LABA_2_1\obj\Debug\LABA_2_1.exe
 C:\Users\Petr\source\repos\LABA_3\LABA_2_1\obj\Debug\LABA_2_1.pdb
+C:\Users\Petr\source\repos\LABA_3\LABA_2_1\obj\Debug\LABA_2_1_ATT_2.csproj.AssemblyReference.cache

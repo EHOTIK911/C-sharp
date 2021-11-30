@@ -1,6 +1,7 @@
 ﻿/*lab 3
  * Novikov Petr IB-11
  * Method's prinimauchie i vosvrashauchie massivi v kachestve parametrov. Files.
+ * https://i.imgur.com/ChQGi2A.png
  */
 using System;
 using System.Collections.Generic;
@@ -19,17 +20,6 @@ namespace LABA_3_3
         static void Main(string[] args)
         {
             // Делаем красиво
-            Console.Write("log: OPEN FILE");
-            System.Threading.Thread.Sleep(600);
-
-
-            //
-            Console.Write("\nlog: READING FILE");
-            for (int s = 0; s < 3; s++)
-            {
-                System.Threading.Thread.Sleep(800);
-                Console.Write(".");
-            }
             string pathFINAL = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_3\LABA_3_3_FINAL.txt";
             int max = 0, min = 0, max1 = 0, min1 = 0;
             // Открываем файл и записываем в список числа
@@ -54,8 +44,8 @@ namespace LABA_3_3
                 Console.Write(intList_X[i] + " ");
 
             }
-            //Записываем данные из первого списка во второй
-            // Дублируем элементы и формируем массив Y
+            // Записываем данные из первого списка во второй
+            // формируем массив Y
             FORM_MAS_Y(intList_X, intList_Y);
             // для массива(списка) с дубликатами находим максимум и минимум
             MAX_MIN_SECOND_MAS(ref max, ref min, intList_Y, MAX_NUMBER, MIN_NUMBER);
@@ -98,9 +88,17 @@ namespace LABA_3_3
                 }
 
             }
+            
             int ENTER_IN_MAS = ENTER_IN_MASSIVE(intList_X, intList_Y);
             Console.WriteLine("\nКоличество вхождений в массив " + ENTER_IN_MAS);
+            Console.WriteLine("Mode: " + Mode(intList_Y));
             // Делаем красиво
+            CUSTOM02();
+            Console.ReadKey();
+        }
+
+        private static void CUSTOM02()
+        {
             Console.Write("\nlog: RECORDING FILE");
             for (int s = 0; s < 3; s++)
             {
@@ -109,14 +107,41 @@ namespace LABA_3_3
             }
             System.Threading.Thread.Sleep(500);
             Console.WriteLine("\nlog: CLOSE FILE");
-            Console.ReadKey();
         }
 
+        static int Mode(List<int> arr)
+        {
+            int count = 0,mode = 0,max = 0;
+            for(int i = 0; i < arr.Count; i++)
+            {
+                for(int j = 0; j < arr.Count-1; j++)
+                {
+                    if (i == j)
+                        j++;
+                    if(arr[i] == arr[j])
+                    {
+                        count++;
+                    }
+                        
+                }
+                if(count > max)
+                {
+                    max = count;
+                    mode = i;
+                }
+            }
+            mode = arr[mode];
+            return mode;
+        }
+
+       
+
+        // Количество вхождений в массив 
         private static int ENTER_IN_MASSIVE(List<int> intList_X, List<int> intList_Y)
         {
             return intList_Y.Count - intList_X.Count;
         }
-
+        // Образование массива Y
         private static void FORM_MAS_Y(List<int> intList_X, List<int> intList_Y)
         {
 
