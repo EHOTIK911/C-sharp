@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\bin\Debug\TEST_PROJECT.exe.config
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\bin\Debug\TEST_PROJECT.exe
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\bin\Debug\TEST_PROJECT.pdb
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\obj\Debug\TEST_PROJECT.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\obj\Debug\TEST_PROJECT.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\obj\Debug\TEST_PROJECT.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\obj\Debug\TEST_PROJECT.exe
+C:\Users\Petr\source\repos\TEST_PROJECT\TEST_PROJECT\obj\Debug\TEST_PROJECT.pdb
