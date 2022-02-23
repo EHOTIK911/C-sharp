@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\HW\HW_2\bin\Debug\HW_2.exe.config
+C:\Users\Petr\source\repos\HW\HW_2\bin\Debug\HW_2.exe
+C:\Users\Petr\source\repos\HW\HW_2\bin\Debug\HW_2.pdb
+C:\Users\Petr\source\repos\HW\HW_2\obj\Debug\HW_2.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\HW\HW_2\obj\Debug\HW_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\HW\HW_2\obj\Debug\HW_2.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\HW\HW_2\obj\Debug\HW_2.exe
+C:\Users\Petr\source\repos\HW\HW_2\obj\Debug\HW_2.pdb

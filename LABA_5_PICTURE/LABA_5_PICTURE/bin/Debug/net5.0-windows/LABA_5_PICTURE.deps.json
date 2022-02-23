@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "LABA_5_PICTURE/1.0.0": {
+        "runtime": {
+          "LABA_5_PICTURE.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LABA_5_PICTURE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

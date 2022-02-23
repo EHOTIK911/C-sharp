@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T1O/QhLY59VwNWwq/Q7q7G6ZrSsbKNzinde1+UngecEiS7BDDoQfyWvws77bB79LHcUDyZbq5MWPSNKJgZm/YA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Petr\\source\\repos\\LABA_5_PICTURE\\LABA_5_PICTURE\\LABA_5_PICTURE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Petr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

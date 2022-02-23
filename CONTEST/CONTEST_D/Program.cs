@@ -14,53 +14,66 @@ namespace CONTEST_D
 
         static void Main(string[] _TEST)
         {
-            List<int> check = new List<int>();
-            string[] str = File.ReadAllLines(@"input.txt");
-            int n = Convert.ToInt32(str[0]);
-            int[,] mas = new int[n, n];
-            Random rnd = new Random();
-            int p = 0, d;
-            int max = 0;
-            for (int s = 1; s < str.Length; s++)
-            {
-                string[] srt2 = str[s].Split(' ');
-                for (int j = 0; j < n; j++)
-                {
-                    mas[p, j] = Convert.ToInt32(srt2[j].ToString());
-                    if (mas[p, j] > max)
-                    {
-                        max = mas[p, j];
-                    }
-                    if (mas[p, j] != 0)
-                    {
-                        check.Add(mas[p, j]);
-                    }
-                }
-                p++;
-            }
-            StreamWriter re = new StreamWriter("output.txt");
-            for (int i = 0; i < n; ++i)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (mas[i, j] == 0)
-                    {
-                        d = rnd.Next(1, max * max);
-                        while (check.Contains(d))
-                        {
-                            d = rnd.Next(1, max * max);
-                        }
-                        mas[i, j] = d;
-                        check.Add(d);
-                    }
-                    re.Write(mas[i, j] + " ");
-                }
-                re.WriteLine();
-            }
-            re.Close();
-            
-            Console.ReadKey();
 
+
+            string[] G = File.ReadAllLines(@"input.txt");
+            int B = Convert.ToInt32(G[0]);int[,] MAS = new int[B, B];List<int> LIST = new List<int>();
+            Random RAND = BASE(G, B, MAS, LIST);
+            StreamWriter RE = new StreamWriter(@"output.txt");
+            PRINT(MAS, LIST, RAND, RE);
+        }
+
+        private static Random BASE(string[] G, int B, int[,] MAS, List<int> LIST)
+        {
+            for (int i = 0; i <= B * B; i++)
+                LIST.Add(i + 1);
+            Random RAND = new Random();
+            for (int i = 0; i < MAS.GetLength(0); i++)
+                TEST_2(G, MAS, LIST, i);
+            return RAND;
+        }
+
+        private static void PRINT(int[,] MAS, List<int> LIST, Random RAND, StreamWriter RE)
+        {
+            for (int i = 0; i < MAS.GetLength(0); i++)
+                PRINT_2(MAS, LIST, RAND, i);
+            RE.Close();
+        }
+
+        private static void PRINT_2(int[,] MAS, List<int> LIST, Random RAND, int i)
+        {
+            for (int j = 0; j < MAS.GetLength(1); j++)
+                PRING_1(MAS, LIST, RAND, i, j);
+            Console.WriteLine();
+        }
+
+        private static void PRING_1(int[,] MAS, List<int> LIST, Random RAND, int i, int j)
+        {
+            if (MAS[i, j] == 0)
+                TEST_3(MAS, LIST, RAND, i, j);
+            Console.Write(MAS[i, j] + " ");
+        }
+
+        private static void TEST_3(int[,] MAS, List<int> LIST, Random RAND, int i, int j)
+        {
+            int Y = RAND.Next(0, LIST.Count - 1);
+            MAS[i, j] = LIST[Y];
+            LIST.RemoveAt(Y);
+        }
+
+        private static void TEST_2(string[] G, int[,] MAS, List<int> LIST, int i)
+        {
+            string STRING = G[i + 1];
+            string[] mas = STRING.Split(' ');
+            for (int j = 0; j < MAS.GetLength(1); j++)
+                TEST_1(MAS, LIST, i, mas, j);
+        }
+
+        private static void TEST_1(int[,] MAS, List<int> LIST, int i, string[] mas, int j)
+        {
+            MAS[i, j] = Convert.ToInt32(mas[j]);
+            if (Convert.ToInt32(mas[j]) != 0)
+                LIST.Remove(Convert.ToInt32(mas[j]));
         }
     }
 }

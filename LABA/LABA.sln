@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32127.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LABA", "LABA\LABA.csproj", "{997AFC59-3AD2-495B-8477-9F0E179C9046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUM_2", "NUM_2\NUM_2.csproj", "{876499FB-FE7C-4FE3-9979-3EDA9E2E7637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LABA_2_TEST", "LABA_2_TEST\LABA_2_TEST.csproj", "{08181165-6E09-4D5C-8ADD-E4A8306D1266}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{997AFC59-3AD2-495B-8477-9F0E179C9046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{997AFC59-3AD2-495B-8477-9F0E179C9046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{997AFC59-3AD2-495B-8477-9F0E179C9046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{997AFC59-3AD2-495B-8477-9F0E179C9046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876499FB-FE7C-4FE3-9979-3EDA9E2E7637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876499FB-FE7C-4FE3-9979-3EDA9E2E7637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876499FB-FE7C-4FE3-9979-3EDA9E2E7637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876499FB-FE7C-4FE3-9979-3EDA9E2E7637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08181165-6E09-4D5C-8ADD-E4A8306D1266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08181165-6E09-4D5C-8ADD-E4A8306D1266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08181165-6E09-4D5C-8ADD-E4A8306D1266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08181165-6E09-4D5C-8ADD-E4A8306D1266}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F235AD10-0B73-4180-A8AF-38E29FBF8CD9}
+	EndGlobalSection
+EndGlobal

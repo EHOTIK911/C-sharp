@@ -11,123 +11,65 @@ namespace CONTEST_C
     {
         static void Main(string[] _1)
         {
-            int DAY_NUMBER = 1, COUNT_1 = 0;
-            string[] MASSIVE = File.ReadAllLines("input.txt"); List<int> COURSE = new List<int>(); List<int> MINUTE = new List<int>();
-            StreamWriter RT = new StreamWriter("output.txt");
-            BASE(ref DAY_NUMBER, ref COUNT_1, MASSIVE, COURSE, MINUTE);
-            RT.WriteLine(DAY_NUMBER);
-            RT.Close();
-
-
-        }
-
-        private static void BASE(ref int DAY_NUMBER, ref int COUNT_1, string[] MASSIVE, List<int> COURSE, List<int> MINUTE)
-        {
-            for (int i = 1; i < MASSIVE.Length; i++)
-                TEST_1(MASSIVE, COURSE, MINUTE, i);
-            for (int i = 1; i < MINUTE.Count; i++)
-                TEST_2(ref DAY_NUMBER, ref COUNT_1, COURSE, MINUTE, i);
-        }
-
-        private static void TEST_1(string[] MASSIVE, List<int> COURSE, List<int> MINUTE, int i)
-        {
-            string STRING_1 = MASSIVE[i];
-            if (STRING_1[1] == '0')
-                TEST_4(COURSE, STRING_1);
-            else
-                TEST_3(COURSE, STRING_1);
-            string STRING_2 = MASSIVE[i];
-            if (STRING_2[4] == '0')
-                TEST_8(MINUTE, STRING_1);
-            else
-                TEST_7(MINUTE, STRING_2);
-        }
-
-        private static void TEST_2(ref int DAY_NUMBER, ref int COUNT_1, List<int> COURSE, List<int> MINUTE, int i)
-        {
-            if (MINUTE[i] - MINUTE[i - 1] <= 0 && COURSE[i] - COURSE[i - 1] > 0 || MINUTE[i] - MINUTE[i - 1] >= 0 && COURSE[i] - COURSE[i - 1] >= 0)
-                COUNT_1++;
-            else
-                COUNT_1 = TEST_5(ref DAY_NUMBER);
-            if (COUNT_1 == 10)
-                COUNT_1 = TEST_6(ref DAY_NUMBER);
-        }
-
-        private static void TEST_3(List<int> COURSE, string STRING_1)
-        {
-            if (STRING_1[7] == 'p')
-                TEST_11(COURSE, STRING_1);
-            else
-                TEST_9(COURSE, STRING_1);
-        }
-
-        private static void TEST_4(List<int> COURSE, string STRING_1)
-        {
-            if (STRING_1[7] == 'p')
-                TEST_13(COURSE, STRING_1);
-            else
-                TEST_12(COURSE, STRING_1);
-        }
-
-        private static int TEST_5(ref int DAY_NUMBER)
-        {
+            int VOLUE = 0;
+            string[] S = File.ReadAllLines("input.txt");
+            int N = Convert.ToInt32(S[0]);
+            int[,] MAS_1 = new int[N, N];
             int COUNT_1 = 0;
-            DAY_NUMBER++;
-            return COUNT_1;
+            BASE(ref VOLUE, S, MAS_1, ref COUNT_1);
+            PRINT(COUNT_1);
         }
 
-        private static int TEST_6(ref int DAY_NUMBER)
+        private static void PRINT(int COUNT_1)
         {
-            int COUNT_1;
-            DAY_NUMBER++;
-            COUNT_1 = 0;
-            return COUNT_1;
+            StreamWriter RE = new StreamWriter("output.txt");
+            RE.WriteLine(COUNT_1 / 2);
+            RE.Close();
         }
 
-        private static void TEST_7(List<int> MINUTE, string STRING_2)
+        private static void BASE(ref int VOLUE, string[] S, int[,] MAS_1, ref int COUNT_1)
         {
-            string F = STRING_2[4].ToString() + STRING_2[5];
-            int V = Convert.ToInt32(F);
-            MINUTE.Add(V);
+            TEST_5(S, MAS_1);
+            TEST_2(ref VOLUE, S, MAS_1, ref COUNT_1);
         }
 
-        private static void TEST_8(List<int> MINUTE, string STRING_1)
+        private static void TEST_5(string[] S, int[,] MAS_1)
         {
-            int G = Convert.ToInt32(STRING_1[5].ToString());
-            MINUTE.Add(G);
+            for (int i = 0; i < MAS_1.GetLength(0); i++)
+                TEST_4(S, MAS_1, i);
         }
 
-        private static void TEST_9(List<int> COURSE, string STRING_1)
+        private static void TEST_4(string[] S, int[,] MAS_1, int i)
         {
-            string sum = STRING_1[1].ToString() + STRING_1[2];
-            int L = Convert.ToInt32(sum.ToString());
-            if (L == 12)
-                COURSE.Add(0);
-            else
-                COURSE.Add(L);
+            string STRING_1 = S[i + 1];
+            string[] MASSIV_1 = STRING_1.Split(' ');
+            TEST_3(MAS_1, i, MASSIV_1);
         }
 
-        private static void TEST_11(List<int> COURSE, string STRING_1)
+        private static void TEST_3(int[,] MAS_1, int i, string[] MASSIV_1)
         {
-            string sum = STRING_1[1].ToString() + STRING_1[2];
-            int K = 12 + Convert.ToInt32(sum.ToString());
-            if (K == 24)
-                COURSE.Add(12);
-            else
-                COURSE.Add(K);
+            for (int j = 0; j < MAS_1.GetLength(1); j++)
+                MAS_1[i, j] = Convert.ToInt32(MASSIV_1[j]);
         }
 
-        private static void TEST_12(List<int> COURSE, string STRING_1)
+        private static void TEST_2(ref int VOLUE, string[] S, int[,] MAS_1, ref int COUNT_1)
         {
-            int N = Convert.ToInt32(STRING_1[2].ToString());
-            COURSE.Add(N);
+            string STRING_2 = S[S.Length - 1];
+            string[] STRING_3 = STRING_2.Split(' ');
+            for (int i = 0; i < MAS_1.GetLength(0); i++)
+                VOLUE = TEST_1(MAS_1, ref COUNT_1, STRING_3, i);
         }
 
-        private static void TEST_13(List<int> COURSE, string STRING_1)
+        private static int TEST_1(int[,] MAS_1, ref int COUNT_1, string[] STRING_3, int i)
         {
-            int Y = 12 + Convert.ToInt32(STRING_1[2].ToString());
-            COURSE.Add(Y);
-        }
+            int VOLUE = Convert.ToInt32(STRING_3[i]);
+            for (int j = 0; j < MAS_1.GetLength(1); j++)
+            {
+                if (MAS_1[i, j] != 0 && VOLUE != Convert.ToInt32(STRING_3[j]))
+                    COUNT_1++;
+            }
 
+            return VOLUE;
+        }
     }
 }
