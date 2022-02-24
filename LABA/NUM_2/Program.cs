@@ -16,6 +16,7 @@ namespace NUM_2
         static void Main(string[] args)
         {
             int a = -1, b = 0, a1;
+
             int count_1 = 0, count_2 = 0, max_count_1 = 0, max_count_2 = 0;
             List<int> pos1 = new List<int>();
             List<int> pos2 = new List<int>();
@@ -29,6 +30,7 @@ namespace NUM_2
             pos2 = input();
             for(int i = 0; i < pos1.Count - 1; i++)
             {
+
                 if(pos1[i] < pos1[i + 1] && i != pos1.Count-1)
                 {
                     count_1++;

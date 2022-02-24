@@ -25,6 +25,7 @@ namespace LABA
                     if (Blin[i + 1] != "W")
                     {
                         count++;
+
                     }
                     else
                         continue;
