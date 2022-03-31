@@ -6,3 +6,11 @@ C:\Users\Petr\source\repos\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.csproj.Suggeste
 C:\Users\Petr\source\repos\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.csproj.CoreCompileInputs.cache
 C:\Users\Petr\source\repos\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.exe
 C:\Users\Petr\source\repos\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\bin\Debug\CONTEST_C.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\bin\Debug\CONTEST_C.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\bin\Debug\CONTEST_C.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\CONTEST\CONTEST_C\obj\Debug\CONTEST_C.pdb

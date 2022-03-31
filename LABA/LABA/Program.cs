@@ -18,6 +18,7 @@ namespace LABA
                 string s = Console.ReadLine();
                 Blin.Add(s);
             }
+            
             for(int i = 0; i < Blin.Count; i++)
             {
                 if(Blin[i] == "W" && i != Blin.Count - 1)
@@ -27,8 +28,7 @@ namespace LABA
                         count++;
 
                     }
-                    else
-                        continue;
+                   
 
                 }
                 if (Blin[i] == "B" && i != Blin.Count - 1)
@@ -37,8 +37,7 @@ namespace LABA
                     {
                         count++;
                     }
-                    else
-                        continue;
+                
 
 
                 }
