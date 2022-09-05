@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\bin\Debug\ThreadIvent.exe.config
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\bin\Debug\ThreadIvent.exe
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\bin\Debug\ThreadIvent.pdb
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\obj\Debug\ThreadIvent.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\obj\Debug\ThreadIvent.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\obj\Debug\ThreadIvent.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\obj\Debug\ThreadIvent.exe
+C:\Users\Petr\source\repos\ThreadIvent\ThreadIvent\obj\Debug\ThreadIvent.pdb
