@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\House\House\bin\Debug\House.exe.config
+C:\Users\Petr\source\repos\House\House\bin\Debug\House.exe
+C:\Users\Petr\source\repos\House\House\bin\Debug\House.pdb
+C:\Users\Petr\source\repos\House\House\obj\Debug\House.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\House\House\obj\Debug\House.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\House\House\obj\Debug\House.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\House\House\obj\Debug\House.exe
+C:\Users\Petr\source\repos\House\House\obj\Debug\House.pdb

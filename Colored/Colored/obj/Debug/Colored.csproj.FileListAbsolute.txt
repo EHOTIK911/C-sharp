@@ -1,0 +1,8 @@
+C:\Users\Petr\source\repos\Colored\Colored\bin\Debug\Colored.exe.config
+C:\Users\Petr\source\repos\Colored\Colored\bin\Debug\Colored.exe
+C:\Users\Petr\source\repos\Colored\Colored\bin\Debug\Colored.pdb
+C:\Users\Petr\source\repos\Colored\Colored\obj\Debug\Colored.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\Colored\Colored\obj\Debug\Colored.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\Colored\Colored\obj\Debug\Colored.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\Colored\Colored\obj\Debug\Colored.exe
+C:\Users\Petr\source\repos\Colored\Colored\obj\Debug\Colored.pdb

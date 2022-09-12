@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colored", "Colored\Colored.csproj", "{E3445BF6-19BD-4BC0-8CC3-11FFB0574AE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{737A5A5D-11AB-4BB7-ADD3-021B3D7D4D91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3445BF6-19BD-4BC0-8CC3-11FFB0574AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3445BF6-19BD-4BC0-8CC3-11FFB0574AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3445BF6-19BD-4BC0-8CC3-11FFB0574AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3445BF6-19BD-4BC0-8CC3-11FFB0574AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737A5A5D-11AB-4BB7-ADD3-021B3D7D4D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737A5A5D-11AB-4BB7-ADD3-021B3D7D4D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737A5A5D-11AB-4BB7-ADD3-021B3D7D4D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737A5A5D-11AB-4BB7-ADD3-021B3D7D4D91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95EE6C81-8ECF-41D0-8755-049E774A7714}
+	EndGlobalSection
+EndGlobal
