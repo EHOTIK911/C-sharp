@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\bin\Debug\Laba1_2.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\bin\Debug\Laba1_2.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\bin\Debug\Laba1_2.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\obj\Debug\Laba1_2.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\obj\Debug\Laba1_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\obj\Debug\Laba1_2.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\obj\Debug\Laba1_2.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Laba1\Laba1_2\obj\Debug\Laba1_2.pdb

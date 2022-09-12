@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\bin\Debug\SimpleCode.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\bin\Debug\SimpleCode.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\bin\Debug\SimpleCode.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\obj\Debug\SimpleCode.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\obj\Debug\SimpleCode.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\obj\Debug\SimpleCode.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\obj\Debug\SimpleCode.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\SimpleCode\obj\Debug\SimpleCode.pdb

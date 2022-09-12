@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\bin\Debug\Значение и сумма + вывод.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\bin\Debug\Значение и сумма + вывод.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\bin\Debug\Значение и сумма + вывод.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\obj\Debug\Значение и сумма + вывод.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\obj\Debug\Значение и сумма + вывод.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\obj\Debug\Значение и сумма + вывод.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\obj\Debug\Значение и сумма + вывод.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Значение и сумма + вывод\obj\Debug\Значение и сумма + вывод.pdb

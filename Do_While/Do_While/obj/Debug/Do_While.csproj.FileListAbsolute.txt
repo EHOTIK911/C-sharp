@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\bin\Debug\Do_While.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\bin\Debug\Do_While.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\bin\Debug\Do_While.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\obj\Debug\Do_While.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\obj\Debug\Do_While.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\obj\Debug\Do_While.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\obj\Debug\Do_While.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\Do_While\Do_While\obj\Debug\Do_While.pdb

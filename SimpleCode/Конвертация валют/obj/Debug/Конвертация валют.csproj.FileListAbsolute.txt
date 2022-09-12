@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\bin\Debug\Конвертация валют.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\bin\Debug\Конвертация валют.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\bin\Debug\Конвертация валют.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\obj\Debug\Конвертация валют.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\obj\Debug\Конвертация валют.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\obj\Debug\Конвертация валют.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\obj\Debug\Конвертация валют.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\SimpleCode\Конвертация валют\obj\Debug\Конвертация валют.pdb

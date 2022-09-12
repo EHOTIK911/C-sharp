@@ -10,62 +10,56 @@ namespace CONTEST_B
 {
     class Program
     {
-        static void Main(string[] args)
+        public struct _CNT
         {
-            string[] s = Console.ReadLine().Split(' ');
-            int n = int.Parse(s[0]);
-            int m = int.Parse(s[1]);
-            double massa = 0,sale = 0;
-            bool flag = true;
-            int z = 0;
-            List<double> price = new List<double>();
-            List<double> value = new List<double>();
-            List<double> koef = new List<double>();
-            for(int i = 0; i < n; i++)
-            {
-                string[] ss = Console.ReadLine().Split(' ');
-                price.Add(Convert.ToDouble(ss[0]));
-                value.Add(Convert.ToDouble(ss[1]));
-
-            }
-            for(int i = 0; i < price.Count; i++)
-            {
-                koef.Add(price[i]/value[i]);
-            }
-            for(int i = 0; i < koef.Count; i++)
-            {
-                Console.WriteLine(koef[i]);
-            }
-            while (massa <= m)
-            {
-              
-                int g = koef.IndexOf(koef.Max());
-                massa += value[g];
-                sale += price[g];
-                koef.RemoveAt(g);
-                if(koef.Count == 0)
-                {
-                    break;
-                }
-                z = g;
-            }
-            if(massa > m)
-            {
-                massa -= value[z];
-                sale -= price[z];
-                double d = 1f / value[z];
-                double l = value[z];
-                double p = price[z];
-                sale += p / (l * d);
-               
-            } 
-            
-            Console.WriteLine("{0:0.000}",sale);
-            
-            Console.ReadKey();
-            
+            public string SN;
+            public double SC;
         }
-    
-        
+        static void Main(string[] _1)
+        {
+            using (StreamReader az = new StreamReader("schools.in"))
+            {
+                _CNT NUMS = new _CNT();
+                List<_CNT> _L1 = new List<_CNT>(); List<string> _L2 = new List<string>();
+                int _COUT = int.Parse(az.ReadLine());
+                string _ANS = null;
+                for (int i = 0; i < _COUT; i++)
+                    _ANS = @base(az, ref NUMS, _L1, _L2);
+
+                using (StreamWriter aq = new StreamWriter("schools.out"))
+                {
+                    aq.WriteLine(_L1.Count); for (int i = 0; i < _L1.Count; i++) aq.WriteLine(_L1[i].SN);
+
+                }
+            }
+        }
+
+        private static string @base(StreamReader sr, ref _CNT NUMS, List<_CNT> _L1, List<string> _L2)
+        {
+            string _ANS = ""; string _INP = sr.ReadLine();
+            for (int j = 0; j < _INP.Length; j++)
+            {
+                if (_INP[j] >= '0' && _INP[j] <= '9') _ANS = _ANS + _INP[j];
+            }
+            string DS = _ANS;
+            if (!_L2.Contains(DS))
+            {
+                _L2.Add(DS); NUMS.SN = DS; NUMS.SC = 1; _L1.Add(NUMS);
+            }
+            else test(NUMS, _L1, DS);
+            return _ANS;
+        }
+
+        private static void test(_CNT NUMS, List<_CNT> _L1, string DS)
+        {
+            for (int s = 0; s < _L1.Count; s++)
+            {
+                if (_L1[s].SN == DS)
+                {
+                    NUMS.SN = DS; NUMS.SC = _L1[s].SC + 1; _L1.RemoveAt(s); _L1.Insert(s, NUMS);
+                    if (_L1[s].SC == 6) _L1.RemoveAt(s); break;
+                }
+            }
+        }
     }
 }

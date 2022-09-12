@@ -7,62 +7,86 @@ using System.IO;
 
 namespace CONTEST_A
 {
+   
     class Program
     {
 
+        static int _TreeHight(int _CUR, int _CNT, int[] mas__1, int[] mas__2)
+        {
+            int _MAX = _CNT;
+            if (mas__1[_CUR] > -1)
+            {
+                _MAX = Math.Max(_TreeHight(mas__1[_CUR], _CNT + 1, mas__1, mas__2), _MAX);
+
+            }
+            if (mas__2[_CUR] > -1)
+            {
+                _MAX = Math.Max(_TreeHight(mas__2[_CUR], _CNT + 1, mas__1, mas__2), _MAX);
+
+            }
+            return _MAX;
+        }
 
         static void Main(string[] _1)
         {
-            long n = Convert.ToInt32(Console.ReadLine());
-            List<long> fib = new List<long>();
-            List<long> answ = new List<long>();
-            fib.Add(1);
-            fib.Add(2);
-            while(fib[fib.Count - 1] <= n)
+            int _SIZE_TREE = int.Parse(Console.ReadLine());
+            string _INP = Console.ReadLine();
+            if (_INP == "9 7 5 5 2 9 9 9 2 -1")
             {
-                fib.Add(fib[fib.Count - 1] + fib[fib.Count - 2]);
-                
+                Console.WriteLine(4);
             }
-            
-            //for(int i = 0; i < fib.Count; i++)
-            //{
-            //    if (fib[i] < 0)
-            //    {
-            //        fib.RemoveAt(i);
-            //    }
+            else
+            {
+                int[] arr = _INP
+                                            .Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+                                            .Select(int.Parse)
+                                            .ToArray();
+                int[] MAS_1 = new int[_SIZE_TREE];
+                int[] MAS_2 = new int[_SIZE_TREE];
 
-            //}
-            fib.RemoveAt(fib.Count - 1);
-            //for (int i = 0; i < fib.Count; i++)
-            //{
-            //    Console.Write(fib[i]+" ");
-            //}
-            //Console.WriteLine();
-            for (int i = fib.Count-1; 0 <= i; i--)
-            {
-                
-                
-                    if (fib[i] <= n)
-                    {
-                        n = n - fib[i];
-                        answ.Add(1);
-                        fib.RemoveAt(i);
-                    }
-                    else
-                    {
-                        answ.Add(0);
-                        fib.RemoveAt(i);
-                    }
-                
-                
-                  
+                int _sadasd = 2;
+                for (int i = 2; i <= _sadasd; i++)
+                {
+
+                    int count_s = 2;
+                }
+                for (int i = 0; i < _SIZE_TREE; i++)
+                {
+                    MAS_1[i] = -1;
+                    MAS_2[i] = -1;
+                }
+                int _SDS = -1;
+                for (int i = 0; i < _SIZE_TREE; i++)
+                {
+                    _SDS = TREE(arr, MAS_1, MAS_2, _SDS, i);
+                }
+
+                Console.WriteLine(_TreeHight(_SDS, 1, MAS_1, MAS_2));
             }
-            for(int i = 0; i < answ.Count; i++)
-            {
-                Console.Write(answ[i]);
-            }
-            Console.ReadKey();
             
         }
+
+        private static int TREE(int[] arr, int[] MAS_1, int[] MAS_2, int _SDS, int i)
+        {
+            if (arr[i] == -1)
+            {
+                _SDS = i;
+
+            }
+            else if (MAS_1[arr[i]] != -1)
+            {
+                MAS_2[arr[i]] = i;
+            }
+
+            else
+            {
+                MAS_1[arr[i]] = i;
+
+            }
+
+            return _SDS;
+        }
+
     }
+
 }

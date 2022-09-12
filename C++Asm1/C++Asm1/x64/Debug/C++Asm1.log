@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\C++Asm1\C++Asm1\Source.cpp(13,9): warning C4101: m: неиспользованная локальная переменная
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\C++Asm1\C++Asm1\Source.cpp(13,6): warning C4101: n: неиспользованная локальная переменная
+  C++Asm1.vcxproj -> C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\C++Asm1\x64\Debug\C++Asm1.exe
