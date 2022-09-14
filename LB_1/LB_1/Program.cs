@@ -1,9 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 using static System.ConsoleColor;
 using static LB_1.ColoredConsole;
 
@@ -13,7 +20,8 @@ namespace LB_1
 
     public class Transport
     {
-        private string Name { get; set; }
+        private static string _name;
+        private string Name { get { return _name; } set { _name = value; } }
         private int Year { get; set; }
         private int Weight { get; set; }
         private string Color { get; set; }
@@ -27,7 +35,7 @@ namespace LB_1
         /// <param name="year">Year</param>
         /// <param name="weight">Weight</param>
         /// <param name="color">Color</param>
-        private Transport(string name, int year, int weight, string color)
+        public Transport(string name, int year, int weight, string color)
         {
             Name = name;
             Year = year;
@@ -37,11 +45,15 @@ namespace LB_1
 
         public override string ToString()
         {
-            return String.Format($"   {Name}\n Year: {Year}\n Weight: {Weight}\n Color: {Color}\n");
+            return String.Format(
+                //$"   {Name}\n" +
+                $" Year: {Year}\n" +
+                $" Weight: {Weight}\n" +
+                $" Color: {Color}\n");
         }
 
         public Transport(string s) : this(s, 22, 12, "Blue") { }
-
+        protected string sName => Name;
        // public abstract void Print();
     }
     /*
@@ -187,7 +199,7 @@ namespace LB_1
 
 
             Transport pet = new Transport("Train");
-            //$"  {pet.Name}"._sout(Cyan);
+           // $"  {pet}"._sout(Cyan);
             $"{pet.ToString()}"._sout(Red);
             //$"{pet.Weight}"._sout();
             
