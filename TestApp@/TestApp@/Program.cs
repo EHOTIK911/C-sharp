@@ -183,6 +183,7 @@ namespace TestApp_
                 foreach(var kvp2 in kvp.Value)
                 {
                     Console.WriteLine($"{kvp.Key}, {kvp2.Key} - {kvp2.Value}");
+                    "test"._sout(Red);
                 }
                 
             }

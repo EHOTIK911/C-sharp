@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kYbDY+apP27qqRwwKFAkKHbrUVrQxIA1JxChvvr4NNFdo5Axu7v2C7j3qW83nYZbk8quC8KLLF2GiP72KE5YPg==",
+  "dgSpecHash": "ZVNo6mzjXwqswl1mpip9BrntEjiqRsr0o0/zmetW3rpPPWxH8gexEBnI/LhxeEC+z+Es+MekP5oKmQx5ONl9vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\TEST.csproj",
+  "projectFilePath": "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\TEST.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

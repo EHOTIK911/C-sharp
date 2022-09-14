@@ -1,30 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ConsoleColor;
+using static LB_1.ColoredConsole;
 
 namespace LB_1
 {
-    public abstract class Transport
+
+
+    public class Transport
     {
-        public int Year { get; set; }
-        public int Weight { get; set; }
-        public string Color { get; set; }
+        private string Name { get; set; }
+        private int Year { get; set; }
+        private int Weight { get; set; }
+        private string Color { get; set; }
 
 
-        protected Transport() { }
-
-        protected Transport(int year, int weight, string color)
+        public Transport() { }
+        /// <summary>
+        /// Transport
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <param name="year">Year</param>
+        /// <param name="weight">Weight</param>
+        /// <param name="color">Color</param>
+        private Transport(string name, int year, int weight, string color)
         {
+            Name = name;
             Year = year;
             Weight = weight;
             Color = color;
         }
 
+        public override string ToString()
+        {
+            return String.Format($"   {Name}\n Year: {Year}\n Weight: {Weight}\n Color: {Color}\n");
+        }
 
-        public abstract void Info();
+        public Transport(string s) : this(s, 22, 12, "Blue") { }
+
+       // public abstract void Print();
     }
+    /*
     class Train : Transport
     {
         public int Сarriages { get; set; }
@@ -32,16 +52,18 @@ namespace LB_1
         {
             Сarriages = carriages;
         }
-
-        public override void Info()
+        public static void Info()
         {
-            Console.WriteLine("Train");
-            Console.WriteLine($"Year: {Year}\n" +
-                              $"Weight: {Weight}\n" +
-                              $"Color: {Color}");
-            Console.WriteLine($"Сarriages: {Сarriages}\n");
+            "   Train"._sout(Cyan);
+            $" Year: {Year}\n Weight: {Weight}\n Color: {Color}\n Carriages: {Сarriages}"._sout(Red);
+            //Console.WriteLine("Train");
+            //Console.WriteLine($"Year: {Year}\n" +
+            //                  $"Weight: {Weight}\n" +
+            //                  $"Color: {Color}");
+            //Console.WriteLine($"Сarriages: {Сarriages}\n");
         }
     }
+    
     public class Airplane : Transport
     {
         public double WingLength { get; set; }
@@ -152,51 +174,23 @@ namespace LB_1
             Console.WriteLine($"Capacity: {Capacity:0.00}\n");
         }
     }
-
+    */
     internal class Program
     {
+        public static DateTime cachedTime;
         static void Main(string[] args)
         {
+            var cachedTime = DateTime.Now;
             Random rand = new Random();
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
             string[] passengerType = new string[] { "WithBody", "WithoutBody" };
 
 
-            Transport[] arr = new Transport[10];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                switch (rand.Next(5))
-                {
-
-                    case 0:
-                        string colorPassanger = colors[rand.Next(0, colors.Length)];
-                        string type = passengerType[rand.Next(0, passengerType.Length)];
-                        arr[i] = new Passenger(rand.Next(18, 45), rand.Next(500), colorPassanger, rand.NextDouble() * 30 + 210, type);
-                        break;
-                    case 1:
-                        string colorTruck = colors[rand.Next(0, colors.Length)];
-                        arr[i] = new Truck(rand.Next(20, 50), rand.Next(5000), colorTruck, rand.NextDouble() * 10 + 120, rand.NextDouble() * 2 + 3);
-                        break;
-                    case 2:
-                        string colorCargoPlane = colors[rand.Next(0, colors.Length)];
-                        arr[i] = new CargoPlane(rand.Next(60, 150), rand.Next(50000), colorCargoPlane, rand.NextDouble() * 5 + 10, rand.NextDouble() * 5000 + 7000);
-                        break;
-                    case 3:
-                        string colorPassengerPlane = colors[rand.Next(0, colors.Length)];
-                        arr[i] = new PassengerPlane(rand.Next(60, 150), rand.Next(50000), colorPassengerPlane, rand.NextDouble() * 5 + 10, rand.Next(120));
-                        break;
-                    case 4:
-                        string colorTrain = colors[rand.Next(0, colors.Length)];
-                        arr[i] = new Train(rand.Next(150, 250), rand.Next(100000), colorTrain, rand.Next(10));
-                        break;
-
-                }
-            }
-            foreach (var transport in arr)
-            {
-                transport.Info();
-            }
+            Transport pet = new Transport("Train");
+            //$"  {pet.Name}"._sout(Cyan);
+            $"{pet.ToString()}"._sout(Red);
+            //$"{pet.Weight}"._sout();
+            
             Console.ReadKey();
         }
     }

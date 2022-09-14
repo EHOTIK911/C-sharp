@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\TEST.csproj": {}
+    "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\TEST.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\TEST.csproj": {
+    "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\TEST.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\TEST.csproj",
+        "projectUniqueName": "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\TEST.csproj",
         "projectName": "TEST",
-        "projectPath": "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\TEST.csproj",
+        "projectPath": "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\TEST.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petr\\source\\repos\\TEST\\TEST\\obj\\",
+        "outputPath": "C:\\Users\\Petr\\source\\repos\\C-sharp\\TEST\\TEST\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,3 +6,11 @@ C:\Users\Petr\source\repos\TestApp@\TestApp@\obj\Debug\TestApp@.csproj.Suggested
 C:\Users\Petr\source\repos\TestApp@\TestApp@\obj\Debug\TestApp@.csproj.CoreCompileInputs.cache
 C:\Users\Petr\source\repos\TestApp@\TestApp@\obj\Debug\TestApp@.exe
 C:\Users\Petr\source\repos\TestApp@\TestApp@\obj\Debug\TestApp@.pdb
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\bin\Debug\TestApp@.exe.config
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\bin\Debug\TestApp@.exe
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\bin\Debug\TestApp@.pdb
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\obj\Debug\TestApp@.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\obj\Debug\TestApp@.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\obj\Debug\TestApp@.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\obj\Debug\TestApp@.exe
+C:\Users\Petr\source\repos\C-sharp\TestApp@\TestApp@\obj\Debug\TestApp@.pdb

@@ -6,3 +6,11 @@ C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\LB_1\LB_1\obj\Debug\LB_1.cspro
 C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\LB_1\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
 C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\LB_1\LB_1\obj\Debug\LB_1.exe
 C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\LB_1\LB_1\obj\Debug\LB_1.pdb
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\bin\Debug\LB_1.exe.config
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\bin\Debug\LB_1.exe
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\bin\Debug\LB_1.pdb
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\obj\Debug\LB_1.csproj.AssemblyReference.cache
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\obj\Debug\LB_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\obj\Debug\LB_1.exe
+C:\Users\Petr\source\repos\C-sharp\LB_1\LB_1\obj\Debug\LB_1.pdb
