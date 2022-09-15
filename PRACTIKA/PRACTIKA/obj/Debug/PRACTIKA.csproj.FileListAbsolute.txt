@@ -1,0 +1,8 @@
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\bin\Debug\PRACTIKA.exe.config
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\bin\Debug\PRACTIKA.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\bin\Debug\PRACTIKA.pdb
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\obj\Debug\PRACTIKA.csproj.AssemblyReference.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\obj\Debug\PRACTIKA.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\obj\Debug\PRACTIKA.csproj.CoreCompileInputs.cache
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\obj\Debug\PRACTIKA.exe
+C:\Users\Pertuchio\source\repos\EHOTIK911\C-sharp\PRACTIKA\PRACTIKA\obj\Debug\PRACTIKA.pdb

@@ -17,44 +17,75 @@ using static LB_1.ColoredConsole;
 namespace LB_1
 {
 
-
+    #region Classes
     public class Transport
     {
-        private static string _name;
-        private string Name { get { return _name; } set { _name = value; } }
-        private int Year { get; set; }
-        private int Weight { get; set; }
-        private string Color { get; set; }
+        //  private static string _name;
+        //public string Name;
+        #region Base
+        private int Year;
 
-
+        // проверить адекватность написания
+        private int Weight; // только положительный 
+        public string Color;
+        //  private int Сarriages;
+        public int year {
+            get { return Year;}
+            set { if (value > 1900 && value < 2022) Year = value; else $"Incorrect Value\n 1900 < Value < 2022"._sout(Red); }
+        }
+        public int weight
+        {
+            get { return weight; }
+            set
+            {
+                if (value > 0) weight = value; else $"Incorrect Value\n Value > 0"._sout(Red);
+            }
+        }
+        #endregion
+            #region method
         public Transport() { }
         /// <summary>
         /// Transport
         /// </summary>
-        /// <param name="name">Name</param>
-        /// <param name="year">Year</param>
-        /// <param name="weight">Weight</param>
-        /// <param name="color">Color</param>
-        public Transport(string name, int year, int weight, string color)
+        /// <param name="year">Year Transport</param>
+        /// <param name="weight">Weight Transport</param>
+        /// <param name="color">Color Transport</param>
+        public Transport(int year, int weight, string color)
         {
-            Name = name;
+           // Name = name;
             Year = year;
             Weight = weight;
             Color = color;
         }
-
+        public Transport(string s) : this(2020, 12, "Blue") { }
+        #endregion
+        #region Override
+        //Регионы
         public override string ToString()
         {
-            return String.Format(
-                //$"   {Name}\n" +
+            return String.Format
+                (
+               // $"   {Name}\n" +
                 $" Year: {Year}\n" +
                 $" Weight: {Weight}\n" +
-                $" Color: {Color}\n");
+                $" Color: {Color}\n"
+                );
         }
+        #endregion
 
-        public Transport(string s) : this(s, 22, 12, "Blue") { }
-        protected string sName => Name;
-       // public abstract void Print();
+        #region Voids
+        public void YearUp()
+        {
+            Year++;
+        }
+        public void WeightUp()
+        {
+            Weight = Weight*Weight;
+        }
+        #endregion
+        //
+        
+       // public abstract void Info();
     }
     /*
     class Train : Transport
@@ -187,22 +218,32 @@ namespace LB_1
         }
     }
     */
+
+    #endregion
     internal class Program
     {
         public static DateTime cachedTime;
         static void Main(string[] args)
         {
-            var cachedTime = DateTime.Now;
+            //var cachedTime = DateTime.Now;
             Random rand = new Random();
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
             string[] passengerType = new string[] { "WithBody", "WithoutBody" };
 
 
-            Transport pet = new Transport("Train");
+            Transport TrainAuto = new Transport("Train");
+
            // $"  {pet}"._sout(Cyan);
-            $"{pet.ToString()}"._sout(Red);
+            $"{TrainAuto.ToString()}"._sout();
+            $"{TrainAuto.ToString()}"._sout();
+            //TrainAuto.year = 9;
+            $"////////////"._sout();
+            Transport TrainManual = new Transport(2021, 33, "Cyan");
+            $"{TrainManual.ToString()}"._sout();
+            Transport Trans = new Transport(205, 2, "White");
+            $"{Trans.ToString()}"._sout();
             //$"{pet.Weight}"._sout();
-            
+
             Console.ReadKey();
         }
     }
