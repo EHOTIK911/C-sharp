@@ -30,6 +30,7 @@ namespace LB_1
         public string Color;
         //  private int Сarriages;
         public int year {
+
             get { return Year;}
             set { if (value > 1900 && value < 2022) Year = value; else $"Incorrect Value\n 1900 < Value < 2022"._sout(Red); }
         }
