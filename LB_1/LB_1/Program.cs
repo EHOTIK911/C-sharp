@@ -32,18 +32,18 @@ namespace LB_1
         public int year {
 
             get { return Year;}
-            set { if (value > 1900 && value < 2022) Year = value; else $"Incorrect Value\n 1900 < Value < 2022"._sout(Red); }
+            set { if (value > 1900 && value < 2022) Year = value; else { $"     Incorrect Year\n   1900 < Value < 2022\n         ↓↓↓↓"._sout(Red); Year = value; } }
         }
         public int weight
         {
-            get { return weight; }
+            get { return Weight; }
             set
             {
-                if (value > 0) weight = value; else $"Incorrect Value\n Value > 0"._sout(Red);
+                if (value > 0) Weight = value; else { $"    Incorrect Weight\n       Value > 0\n         ↓↓↓↓"._sout(Red); Weight = value; };
             }
         }
         #endregion
-            #region method
+        #region method
         public Transport() { }
         /// <summary>
         /// Transport
@@ -54,8 +54,8 @@ namespace LB_1
         public Transport(int year, int weight, string color)
         {
            // Name = name;
-            Year = year;
-            Weight = weight;
+            this.year = year;
+            this.weight = weight;
             Color = color;
         }
         public Transport(string s) : this(2020, 12, "Blue") { }
@@ -67,9 +67,9 @@ namespace LB_1
             return String.Format
                 (
                // $"   {Name}\n" +
-                $" Year: {Year}\n" +
-                $" Weight: {Weight}\n" +
-                $" Color: {Color}\n"
+                $"      Year: {Year}\n" +
+                $"      Weight: {Weight}\n" +
+                $"      Color: {Color}\n"
                 );
         }
         #endregion
@@ -231,21 +231,28 @@ namespace LB_1
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
             string[] passengerType = new string[] { "WithBody", "WithoutBody" };
 
-
+            "   // operator this \\\\"._sout(Cyan);
             Transport TrainAuto = new Transport("Train");
 
-           // $"  {pet}"._sout(Cyan);
-            $"{TrainAuto.ToString()}"._sout();
-            $"{TrainAuto.ToString()}"._sout();
+            // $"  {pet}"._sout(Cyan);
             //TrainAuto.year = 9;
-            $"////////////"._sout();
-            Transport TrainManual = new Transport(2021, 33, "Cyan");
+            
+            $"{TrainAuto.ToString()}"._sout();
+            TrainAuto.YearUp();
+            TrainAuto.WeightUp();
+            "   // operator void \\\\"._sout(Cyan);
+            $"{TrainAuto.ToString()}"._sout();
+            
+            $" // Correct / Incorrect \\\\"._sout(Cyan);
+
+            Transport test = new Transport(2003, 21, "BLue");
+            Transport TrainManual = new Transport(2021, -33, "Cyan");
             $"{TrainManual.ToString()}"._sout();
             Transport Trans = new Transport(205, 2, "White");
             $"{Trans.ToString()}"._sout();
-            //$"{pet.Weight}"._sout();
+                //$"{pet.Weight}"._sout();
 
-            Console.ReadKey();
+                Console.ReadKey();
         }
     }
 }
