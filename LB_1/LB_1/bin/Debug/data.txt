@@ -1,0 +1,3 @@
+Year = 12
+Weight = 32
+Color = Bue

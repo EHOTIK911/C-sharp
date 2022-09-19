@@ -312,32 +312,22 @@ namespace LB_1
         public static DateTime cachedTime;
         static void Main(string[] args)
         {
-
+            int year, weight;
+            string color;
             Errors err = new Errors();
             string path = "data.txt";
             var text = File.ReadAllText(path);
             string[] textArray = File.ReadAllLines(path);
-            if (File.Exists(path))
-            {
-                
-
-                //вывод в консоль количества строк и пути
-                Console.WriteLine($"Текстовый файл по пути {path} содержит {textArray.Length} строк:");
-
-                //цикл фор итерирующий по количеству строк
-                for (int i = 0; i < textArray.Length; i++)
-                {
-                    //берём строку по индексу
-                    text = textArray[i];
-
-                    //выводим номер строки и строку
-                    Console.WriteLine($"{i}) {text}");
-                }
-            }
+            
             for(int i = 0; i < textArray.Length; i++)
             {
-
+                int s = textArray[i].IndexOf('=');
+                textArray[i] = textArray[i].Remove(0, s + 1);
             }
+            year = int.Parse(textArray[0]);
+            weight = int.Parse(textArray[1]);
+            color = textArray[2];
+
             //var cachedTime = DateTime.Now;
             Random rand = new Random();
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
@@ -364,28 +354,14 @@ namespace LB_1
             $"{Trans.ToString()}"._sout();
             Transport Test_2 = new Train(2003, 21, "BLue", -23);
             $"{Test_2.ToString()}"._sout();
+            "   Read File"._sout(Cyan);
+            Transport file = new Transport(year, weight, color);
+            $"{file.ToString()}"._sout(Red);
+
+            //$"{pet.Weight}"._sout();
+
+            Console.ReadKey();
             
-                //$"{pet.Weight}"._sout();
-
-                Console.ReadKey();
-            void ReadText(string p)
-            {
-                var text = File.ReadAllText(p);
-                string[] textArray = File.ReadAllLines(p);
-
-                //вывод в консоль количества строк и пути
-                Console.WriteLine($"Текстовый файл по пути {p} содержит {textArray.Length} строк:");
-
-                //цикл фор итерирующий по количеству строк
-                for (int i = 0; i < textArray.Length; i++)
-                {
-                    //берём строку по индексу
-                    text = textArray[i];
-
-                    //выводим номер строки и строку
-                    Console.WriteLine($"{i}) {text}");
-                }
-            }
         }
     }
 }
