@@ -17,6 +17,26 @@ using static LB_1.ColoredConsole;
 namespace LB_1
 {
 
+    interface Exeptions
+    {
+        void test1();
+    }
+    interface ErTrain
+    {
+        void test();
+    }
+    class Errors : Exeptions, ErTrain
+    {
+        void Exeptions.test1()
+        {
+            $"     Incorrect Year\n   1900 < Value < 2022\n         ↓↓↓↓"._sout(Red);
+        }
+        void ErTrain.test()
+        {
+
+        }
+    }
+
     #region Classes
     public class Transport
     {
@@ -31,7 +51,7 @@ namespace LB_1
         //  private int Сarriages;
         public int year {
 
-            get { return Year;}
+            get { return Year; }
             set { if (value > 1900 && value < 2022) Year = value; else { $"     Incorrect Year\n   1900 < Value < 2022\n         ↓↓↓↓"._sout(Red); Year = value; } }
         }
         public int weight
@@ -53,7 +73,7 @@ namespace LB_1
         /// <param name="color">Color Transport</param>
         public Transport(int year, int weight, string color)
         {
-           // Name = name;
+            // Name = name;
             this.year = year;
             this.weight = weight;
             Color = color;
@@ -66,7 +86,7 @@ namespace LB_1
         {
             return String.Format
                 (
-               // $"   {Name}\n" +
+                // $"   {Name}\n" +
                 $"      Year: {Year}\n" +
                 $"      Weight: {Weight}\n" +
                 $"      Color: {Color}\n"
@@ -81,30 +101,45 @@ namespace LB_1
         }
         public void WeightUp()
         {
-            Weight = Weight*Weight;
+            Weight = Weight * Weight;
         }
         #endregion
         //
-        
-       // public abstract void Info();
+
+        // public abstract void Info();
     }
-    /*
+
     class Train : Transport
     {
-        public int Сarriages { get; set; }
+
+        private int Сarriages;
+        
         public Train(int year, int weight, string color, int carriages) : base(year, weight, color)
         {
-            Сarriages = carriages;
+            this.carriages = carriages;
         }
-        public static void Info()
+        public int carriages
         {
-            "   Train"._sout(Cyan);
-            $" Year: {Year}\n Weight: {Weight}\n Color: {Color}\n Carriages: {Сarriages}"._sout(Red);
-            //Console.WriteLine("Train");
-            //Console.WriteLine($"Year: {Year}\n" +
-            //                  $"Weight: {Weight}\n" +
-            //                  $"Color: {Color}");
-            //Console.WriteLine($"Сarriages: {Сarriages}\n");
+            get { return Сarriages; }
+            set
+            {
+                if (value > 0)
+                    Сarriages = value;
+                else
+                { $"    Incorrect Value\n       Value > 0\n         ↓↓↓↓"._sout(Red); Сarriages = value; }
+                
+            }
+        }
+        public override string ToString()
+        {
+            return String.Format
+                (
+                // $"   {Name}\n" +
+                $"      Year: {year}\n" +
+                $"      Weight: {weight}\n" +
+                $"      Color: {Color}\n" +
+                $"      Сarriages: {Сarriages}" 
+                );
         }
     }
     
@@ -113,16 +148,31 @@ namespace LB_1
         public double WingLength { get; set; }
         public Airplane(int year, int weight, string color, double wingLength) : base(year, weight, color)
         {
-            WingLength = wingLength;
+            this.wingLength = wingLength;
+        }
+        public double wingLength
+        {
+            get { return WingLength; }
+            set
+            {
+                if (value > 0)
+                    WingLength = value;
+                else
+                { $"    Incorrect Value\n       Value > 0\n         ↓↓↓↓"._sout(Red); WingLength = value; }
+
+            }
         }
 
-        public override void Info()
+        public override string ToString()
         {
-            Console.WriteLine("Airplane");
-            Console.WriteLine($"Year: {Year}\n" +
-                              $"Weight: {Weight}\n" +
-                              $"Color: {Color}");
-            Console.WriteLine($"WingLength: {WingLength:0.00}\n");
+            return String.Format
+                (
+                // $"   {Name}\n" +
+                $"      Year: {year}\n" +
+                $"      Weight: {weight}\n" +
+                $"      Color: {Color}\n" +
+                $"      WingLength: {WingLength}" 
+                );
         }
     }
 
@@ -131,16 +181,31 @@ namespace LB_1
         public double Speed { get; set; }
         public Car(int year, int weight, string color, double speed) : base(year, weight, color)
         {
-            Speed = speed;
+            this.speed = speed;
+        }
+        public double speed
+        {
+            get { return Speed; }
+            set
+            {
+                if (value > 0)
+                    Speed = value;
+                else
+                { $"    Incorrect Value\n       Value > 0\n         ↓↓↓↓"._sout(Red); Speed = value; }
+
+            }
         }
 
-        public override void Info()
+        public override string ToString()
         {
-            Console.WriteLine("Car");
-            Console.WriteLine($"Year: {Year}\n" +
-                              $"Weight: {Weight}\n" +
-                              $"Color: {Color}");
-            Console.WriteLine($"Speed: {Speed:0.00}\n");
+            return String.Format
+                (
+                // $"   {Name}\n" +
+                $"      Year: {year}\n" +
+                $"      Weight: {weight}\n" +
+                $"      Color: {Color}\n" +
+                $"      Speed: {Speed}" 
+                );
         }
     }
 
@@ -149,20 +214,34 @@ namespace LB_1
         public double BodyLength { get; set; }
         public Truck(int year, int weight, string color, double speed, double bodyLength) : base(year, weight, color, speed)
         {
-            BodyLength = bodyLength;
+            this.bodyLength = bodyLength;
+        }
+        public double bodyLength
+        {
+            get { return BodyLength; }
+            set
+            {
+                if (value > 0)
+                    BodyLength = value;
+                else
+                { $"    Incorrect Value\n       Value > 0\n         ↓↓↓↓"._sout(Red); BodyLength = value; }
+
+            }
         }
 
-        public override void Info()
+        public override string ToString()
         {
-            Console.WriteLine("Truck");
-            Console.WriteLine($"Year: {Year}\n" +
-                              $"Weight: {Weight}\n" +
-                              $"Color: {Color}\n" +
-                              $"Speed: {Speed:0.00}");
-            Console.WriteLine($"BodyLength: {BodyLength:0.00}\n");
+            return String.Format
+                (
+                // $"   {Name}\n" +
+                $"      Year: {year}\n" +
+                $"      Weight: {weight}\n" +
+                $"      Color: {Color}\n" +
+                $"      BodyLength: {BodyLength}" 
+                );
         }
     }
-
+    /*
     public class Passenger : Car
     {
         public string PassengerType { get; set; }
@@ -171,14 +250,16 @@ namespace LB_1
             PassengerType = passengerType;
         }
 
-        public override void Info()
+        public override string ToString()
         {
-            Console.WriteLine("Truck");
-            Console.WriteLine($"Year: {Year}\n" +
-                              $"Weight: {Weight}\n" +
-                              $"Color: {Color}\n" +
-                              $"Speed: {Speed:0.00}");
-            Console.WriteLine($"PassengerType: {PassengerType}\n");
+            return String.Format
+                (
+                // $"   {Name}\n" +
+                $"      Year: {year}\n" +
+                $"      Weight: {weight}\n" +
+                $"      Color: {Color}\n" +
+                $"      WingLength: {WingLength}" 
+                );
         }
     }
 
@@ -223,9 +304,14 @@ namespace LB_1
     #endregion
     internal class Program
     {
+        Errors Error = new Errors();
+        //ErTrain Error = new Errors();
+        
         public static DateTime cachedTime;
         static void Main(string[] args)
         {
+            Errors err = new Errors();
+            
             //var cachedTime = DateTime.Now;
             Random rand = new Random();
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
@@ -250,6 +336,9 @@ namespace LB_1
             $"{TrainManual.ToString()}"._sout();
             Transport Trans = new Transport(205, 2, "White");
             $"{Trans.ToString()}"._sout();
+            Transport Test_2 = new Train(2003, 21, "BLue", -23);
+            $"{Test_2.ToString()}"._sout();
+            
                 //$"{pet.Weight}"._sout();
 
                 Console.ReadKey();
