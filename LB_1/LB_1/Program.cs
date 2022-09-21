@@ -17,9 +17,6 @@ using static LB_1.ColoredConsole;
 namespace LB_1
 {
 
-
-
-    
     internal class Program
     {
         
@@ -61,9 +58,7 @@ namespace LB_1
             TrainAuto.WeightUp();
             "   // operator void \\\\"._sout(Cyan);
             $"{TrainAuto.ToString()}"._sout();
-            
             $" // Correct / Incorrect \\\\"._sout(Cyan);
-
             Transport test = new Transport(2003, 21, "BLue");
             Transport TrainManual = new Transport(2021, -33, "Cyan");
             $"{TrainManual.ToString()}"._sout();

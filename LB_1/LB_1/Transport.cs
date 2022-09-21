@@ -111,7 +111,6 @@ namespace LB_1
             return base.GetHashCode();
         }
         #endregion
-        //
 
         // public abstract void Info();
     }
