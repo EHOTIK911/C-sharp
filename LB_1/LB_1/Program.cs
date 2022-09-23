@@ -47,28 +47,37 @@ namespace LB_1
             string[] colors = new string[] { "Blue", "Black", "Red", "Green", "Yellow" };
             string[] passengerType = new string[] { "WithBody", "WithoutBody" };
 
-            "   // operator this \\\\"._sout(Cyan);
-            Transport TrainAuto = new Transport("Train");
+            Console.WriteLine("   // operator this \\\\");
+            // "   // operator this \\\\"._sout(Cyan);
+            Transport TrainAuto = new Transport(2022);
 
             // $"  {pet}"._sout(Cyan);
             //TrainAuto.year = 9;
-            
-            $"{TrainAuto.ToString()}"._sout();
+            Console.WriteLine(TrainAuto.ToString());
+            //$"{TrainAuto.ToString()}"._sout();
             TrainAuto.YearUp();
             TrainAuto.WeightUp();
-            "   // operator void \\\\"._sout(Cyan);
-            $"{TrainAuto.ToString()}"._sout();
-            $" // Correct / Incorrect \\\\"._sout(Cyan);
+            Console.WriteLine("   // operator void \\\\");
+            //"   // operator void \\\\"._sout(Cyan);
+            Console.WriteLine(TrainAuto.ToString());
+            // $"{TrainAuto.ToString()}"._sout();
+            Console.WriteLine(" // Correct / Incorrect \\\\");
+            //$" // Correct / Incorrect \\\\"._sout(Cyan);
             Transport test = new Transport(2003, 21, "BLue");
-            Transport TrainManual = new Transport(2021, -33, "Cyan");
-            $"{TrainManual.ToString()}"._sout();
+            Transport TrainManual = new Transport(2023, -33, "Cyan");
+            Console.WriteLine(TrainManual.ToString());
+            //$"{TrainManual.ToString()}"._sout();
             Transport Trans = new Transport(205, 2, "White");
-            $"{Trans.ToString()}"._sout();
+            Console.WriteLine(Trans.ToString());
+            //$"{Trans.ToString()}"._sout();
             Transport Test_2 = new Train(2003, 21, "BLue", -23);
-            $"{Test_2.ToString()}"._sout();
-            "   Read File"._sout(Cyan);
+            Console.WriteLine(Test_2.ToString());
+            // $"{Test_2.ToString()}"._sout();
+            Console.WriteLine("   Read File");
+            //"   Read File"._sout(Cyan);
             Transport file = new Transport(year, weight, color);
-            $"{file.ToString()}"._sout(Red);
+            Console.WriteLine(file.ToString());
+            //$"{file.ToString()}"._sout(Red);
 
             //$"{pet.Weight}"._sout();
 

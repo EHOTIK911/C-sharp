@@ -38,29 +38,27 @@ namespace LB_1
     #region Classes
     public class Transport
     {
-        //  private static string _name;
-        //public string Name;
         #region Base
-        private int Year;
-
-        // проверить адекватность написания
-        private int Weight; // только положительный 
-        public string Color;
-        //  private int Сarriages;
+        private int _year;
         public int year
         {
 
-            get { return Year; }
-            set { if (value > 1900 && value < 2022) Year = value; else { $"     Incorrect Year\n   1900 < Value < 2022\n         ↓↓↓↓"._sout(Red); Year = value; } }
+            get { return _year; }
+            set { if (value > 1900 && value < 2022) _year = value; else { $"     Incorrect Year\n   1900 < Value < 2022\n         ↓↓↓↓"._sout(Red); _year = value; } }
         }
+
+        private int _weight;
         public int weight
         {
-            get { return Weight; }
+            get { return _weight; }
             set
             {
-                if (value > 0) Weight = value; else { $"    Incorrect Weight\n       Value > 0\n         ↓↓↓↓"._sout(Red); Weight = value; };
+                if (value > 0) _weight = value; else { $"    Incorrect Weight\n       Value > 0\n         ↓↓↓↓"._sout(Red); _weight = value; };
             }
         }
+        public string Color;
+        
+        
         #endregion
         #region method
         public Transport() { }
@@ -77,7 +75,11 @@ namespace LB_1
             this.weight = weight;
             Color = color;
         }
-        public Transport(string s) : this(2020, 12, "Blue") { }
+        /// <summary>
+        /// Transport
+        /// </summary>
+        /// <param name="s">Year</param>
+        public Transport(int s) : this(s, 12, "Blue") { }
         #endregion
         #region Override
         //Регионы
@@ -85,9 +87,8 @@ namespace LB_1
         {
             return String.Format
                 (
-                // $"   {Name}\n" +
-                $"      Year: {Year}\n" +
-                $"      Weight: {Weight}\n" +
+                $"      Year: {_year}\n" +
+                $"      Weight: {_weight}\n" +
                 $"      Color: {Color}\n"
                 );
         }
@@ -96,19 +97,35 @@ namespace LB_1
         #region Voids
         public void YearUp()
         {
-            Year++;
+            _year++;
         }
         public void WeightUp()
         {
-            Weight = Weight * Weight;
+            _weight = _weight + 25;
         }
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (obj is Transport)
+            {
+                Transport other = (Transport)obj;
+                return (_year == other._year) && (_weight == other._weight) && (Color == other.Color);
+            }
+            return false;
         }
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        public static bool operator ==(Transport s1, Transport s2)
+        {
+
+            return s1.Equals(s2);
+        }
+        public static bool operator !=(Transport s1, Transport s2)
+        {
+
+            return !(s1.Equals(s2));
         }
         #endregion
 
@@ -132,20 +149,19 @@ namespace LB_1
                 if (value > 0)
                     Сarriages = value;
                 else
-                { $"    Incorrect Value\n       Value > 0\n         ↓↓↓↓"._sout(Red); Сarriages = value; }
+                { $"    Incorrect Сarriages\n       Value > 0\n         ↓↓↓↓"._sout(Red); Сarriages = value; }
 
             }
         }
         public override string ToString()
         {
-            return String.Format
-                (
-                // $"   {Name}\n" +
-                $"      Year: {year}\n" +
-                $"      Weight: {weight}\n" +
-                $"      Color: {Color}\n" +
-                $"      Сarriages: {Сarriages}"
-                );
+            return base.ToString() + $"      Сarriages: {Сarriages}";
+                //(
+                //// $"   {Name}\n" +
+                //$"      Year: {year}\n" +
+                //$"      Weight: {weight}\n" +
+                //$"      Color: {Color}\n" +
+                //);
         }
     }
 
@@ -171,14 +187,9 @@ namespace LB_1
 
         public override string ToString()
         {
-            return String.Format
-                (
-                // $"   {Name}\n" +
-                $"      Year: {year}\n" +
-                $"      Weight: {weight}\n" +
-                $"      Color: {Color}\n" +
-                $"      WingLength: {WingLength}"
-                );
+            return base.ToString() + 
+                $"      WingLength: {WingLength}";
+
         }
     }
 
@@ -204,14 +215,9 @@ namespace LB_1
 
         public override string ToString()
         {
-            return String.Format
-                (
-                // $"   {Name}\n" +
-                $"      Year: {year}\n" +
-                $"      Weight: {weight}\n" +
-                $"      Color: {Color}\n" +
-                $"      Speed: {Speed}"
-                );
+            return base.ToString() + 
+                $"      Speed: {Speed}";
+            
         }
     }
 
@@ -237,14 +243,9 @@ namespace LB_1
 
         public override string ToString()
         {
-            return String.Format
-                (
-                // $"   {Name}\n" +
-                $"      Year: {year}\n" +
-                $"      Weight: {weight}\n" +
-                $"      Color: {Color}\n" +
-                $"      BodyLength: {BodyLength}"
-                );
+            return base.ToString() + 
+                $"      BodyLength: {BodyLength}";
+            
         }
     }
     /*
