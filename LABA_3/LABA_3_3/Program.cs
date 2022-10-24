@@ -23,7 +23,7 @@ namespace LABA_3_3
             string pathFINAL = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_3\LABA_3_3_FINAL.txt";
             int max = 0, min = 0, max1 = 0, min1 = 0;
             // Открываем файл и записываем в список числа
-            string path = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_3\LABA_3_3.txt";
+            string path = "input.txt";
             //List<string> NEW_LIST = new List<string>();
             List<string> fileArray = new List<string>();
             FileStream file = new FileStream(path, FileMode.Open);

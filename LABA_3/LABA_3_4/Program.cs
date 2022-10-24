@@ -97,15 +97,11 @@ namespace LABA_3_4
                     {
                         SORT_DESC_INT(MAS);
                     }
-                    // Повторяющиеся элементы при необходимости ( В случае "yes" , случайные числа итак модгут повторяться)
-                    //if (Repeat == "no")
-                    //{
-                    //    REPEAT_NO_INT(rnd, Min, Max, LenMin_LenMax, MAS);
-                    //}
+
                     // Стилизация вывода
                     if (TypeOut == "row") // Строка
                     {
-                        using (StreamWriter sw = File.CreateText(@"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\" + SetName + g + ".txt"))
+                        using (StreamWriter sw = File.CreateText(SetName + g + ".txt"))
                         {
                             if (g < 10)
                             {
@@ -128,7 +124,7 @@ namespace LABA_3_4
                     if (TypeOut == "col") // Колонка
                     {
                         // Запись в файл
-                        using (StreamWriter sw = File.CreateText(@"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\" + SetName + g + ".txt"))
+                        using (StreamWriter sw = File.CreateText(SetName + g + ".txt"))
                         {
                             if (g < 10)
                             {
@@ -202,7 +198,7 @@ namespace LABA_3_4
                     if (TypeOut == "row") // Строка
                     {
                         // Запись в файл
-                        using (StreamWriter sw = File.CreateText(@"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\" + SetName + g + ".txt"))
+                        using (StreamWriter sw = File.CreateText(SetName + g + ".txt"))
                         {
                             if (g < 10)
                             {
@@ -226,7 +222,7 @@ namespace LABA_3_4
                     if (TypeOut == "col") // Колонка
                     {
                         // Запись в файл
-                        using (StreamWriter sw = File.CreateText(@"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\" + SetName + g + ".txt"))
+                        using (StreamWriter sw = File.CreateText(SetName + g + ".txt"))
                         {
                             if (g < 10)
                             {
@@ -283,37 +279,7 @@ namespace LABA_3_4
                 }
             }
         }
-        // Проверка на повторяющиеся элементы (int)
-        private static void REPEAT_NO_INT(Random rnd, int Min, int Max, int LenMin_LenMax, List<int> MAS)
-        {
-            var result = MAS.Distinct().ToArray();
-            for (int l = 0; l < LenMin_LenMax; l++)
-            {
-                for (int f = 0; f < LenMin_LenMax; f++)
-                {
-                    if (MAS[l] == MAS[f])
-                    {
-                        MAS[l] = rnd.Next(Min, Max);
-                        
-                    }
-                }
-            }
-        }
-        // Проверка на повторяющиеся элементы (double)
-        private static void REPEAT_NO_DOUBLE(Random rnd, int Min, int Max, int LenMin_LenMax, List<double> MAS_float)
-        {
-            for (int l = 0; l < LenMin_LenMax; l++)
-            {
-                for (int f = 0; f < LenMin_LenMax; f++)
-                {
-                    if (MAS_float[l] == MAS_float[f])
-                    {
-                        MAS_float[l] = rnd.NextDouble() * (Max - Min) + Min;
-                        
-                    }
-                }
-            }
-        }
+
         // Метод для сортировки массива по возрастанию (double)
         private static void SORT_ASC_DOUBLE(List<double> MAS_float)
         {

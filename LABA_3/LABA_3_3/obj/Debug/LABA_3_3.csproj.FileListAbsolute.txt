@@ -6,3 +6,11 @@ C:\Users\Petr\source\repos\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.csproj.CoreCompile
 C:\Users\Petr\source\repos\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.exe
 C:\Users\Petr\source\repos\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.pdb
 C:\Users\Petr\source\repos\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\bin\Debug\LABA_3_3.exe.config
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\bin\Debug\LABA_3_3.exe
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\bin\Debug\LABA_3_3.pdb
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.csproj.AssemblyReference.cache
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.csproj.CoreCompileInputs.cache
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.exe
+C:\Users\Racco\Source\Repos\C-sharp\LABA_3\LABA_3_3\obj\Debug\LABA_3_3.pdb
