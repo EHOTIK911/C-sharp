@@ -1,0 +1,13 @@
+Type_of_transport = year weight color Additional_Parameter
+Car = 1902 32 Blue 2 7
+Train = 2000 32 Red 1
+Truck = 1950 63 Cyan -204 50
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Packages/GitHub Theme/schemes/GitHub Dimmed.sublime-color-scheme",
+      "theme": "GitHub Adaptive.sublime-theme",
+	"font_size": 13,
+}
