@@ -1,8 +1,4 @@
-﻿/*lab 3
- * Novikov Petr IB-11
- * Datchik slychainix chisel
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +12,6 @@ namespace LABA_3_4
         
         static void Main(string[] args)
         {
-            string path = @"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\LABA_3_4.txt";
             Random rnd = new Random(); // Создаем рандом
             // Вводим необходимые параметры
             Console.Write("SetName = ");
@@ -39,10 +34,7 @@ namespace LABA_3_4
             string Sort = Console.ReadLine();
             Console.Write("TypeOut = ");
             string TypeOut = Console.ReadLine();
-            //Array.ForEach(Enumerable.Range(1, N).Select(x => @"C:\Users\Petr\source\repos\LABA_3\LABA_3_4\" + "LABA_3_4 "+x.ToString() + ".txt").ToArray(), fileName =>
-            //{
-            //    File.Create(fileName);
-            //});
+
             for (int g = 0; g < N; g++)
             {
                 // Выводим имя теста + проверка на правильность написания (01, 02, 03, ... 09, 10, ...)
