@@ -1,0 +1,23 @@
+System.IO.StreamWriter
+System.IO.StreamWriter
+System.IO.StreamWriter
+Truck
+Year: 1950
+Weight: 63
+Color: Cyan
+Speed: 204
+bodyLength: 50
+
+Car
+Year: 1902
+Weight: 32
+Color: Blue
+Speed: 2
+HorsePower: 7
+
+Train
+Year: 2000
+Weight: 32
+Color: Red
+Сarriages: 1
+
