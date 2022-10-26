@@ -1,0 +1,7 @@
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\Lab_Proj.csproj.AssemblyReference.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\Lab_Proj.csproj.SuggestedBindingRedirects.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.Form1.resources
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\Lab_Proj.csproj.GenerateResource.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\Lab_Proj.csproj.CoreCompileInputs.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.exe
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.pdb

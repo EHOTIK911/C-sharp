@@ -72,3 +72,13 @@ F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.GenerateResource.cache
 F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
 F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.exe
 F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.pdb
+H:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.exe.config
+H:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.exe
+H:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.pdb
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.AssemblyReference.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.SuggestedBindingRedirects.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.Form1.resources
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.GenerateResource.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.exe
+H:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.pdb
