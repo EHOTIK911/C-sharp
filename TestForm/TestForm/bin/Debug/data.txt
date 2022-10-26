@@ -1,0 +1,4 @@
+Type_of_transport = year weight color Additional_Parameter
+Truck = 1950 63 Cyan 204 50
+Car = 1902 32 Blue 2 7 
+Train = 2000 32 Red 1

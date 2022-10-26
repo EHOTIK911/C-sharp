@@ -1,0 +1,2 @@
+10/26/2022 2:26:42 PM: Error: Файл 'H:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\data.txt' не найден.
+10/26/2022 2:26:55 PM: Error: Файл 'H:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\data.txt' не найден.
