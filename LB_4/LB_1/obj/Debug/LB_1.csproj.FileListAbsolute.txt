@@ -62,3 +62,13 @@ D:\Visual Studio Projects\LB_4\LB_1\obj\Debug\LB_1.csproj.SuggestedBindingRedire
 D:\Visual Studio Projects\LB_4\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
 D:\Visual Studio Projects\LB_4\LB_1\obj\Debug\LB_1.exe
 D:\Visual Studio Projects\LB_4\LB_1\obj\Debug\LB_1.pdb
+F:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.exe.config
+F:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.exe
+F:\MyRepos\C-sharp\LB_4\LB_1\bin\Debug\LB_1.pdb
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.AssemblyReference.cache
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.SuggestedBindingRedirects.cache
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.Form1.resources
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.GenerateResource.cache
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.csproj.CoreCompileInputs.cache
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.exe
+F:\MyRepos\C-sharp\LB_4\LB_1\obj\Debug\LB_1.pdb

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -21,7 +22,6 @@ namespace LB_1
 
     internal class Program
     {
-
         //ErTrain Error = new Errors();
         public static DateTime cachedTime;
         static void Main(string[] args)
@@ -29,6 +29,7 @@ namespace LB_1
             Console.OutputEncoding = Encoding.UTF8;
             ColoredConsole.Set();
             bool RemoveList = true;
+            var textInfo = new CultureInfo("ru-RU").TextInfo;
 
             bool fl = true;
             int year, weight, horspower, carriages;
@@ -39,7 +40,7 @@ namespace LB_1
             var QObj = new Queue<Transport>();
             string err = default;
             //Console.Write("Input file Name: ");
-            
+
             using (StreamWriter sw = new StreamWriter("log.txt", true))
             {
                 while (fl)
@@ -59,7 +60,8 @@ namespace LB_1
                     Console.WriteLine("6. Отсортировать массив.");
                     Console.WriteLine("7. Удаление элемента из списка");
                     Console.WriteLine("8. Очистить список.");
-                    Console.WriteLine("9. Выход");
+                    Console.WriteLine("9. Вывод определенных типов данных");
+                    Console.WriteLine("10. Выход");
                     Console.WriteLine("\nНу что, с чего начнем?");
                     Console.WriteLine("Введи номер пункта:");
                     int PNumber = int.Parse(Console.ReadLine());
@@ -99,8 +101,8 @@ namespace LB_1
                                                 ListObj.Add(new Truck("Truck", year, weight, Color, speed, BodyLenght));
                                                 QObj.Enqueue(new Truck("Truck", year, weight, Color, speed, BodyLenght));
                                             }
-                                                
-                                            
+
+
                                             "ADD!"._sout(Yellow);
                                             Thread.Sleep(3000);
                                             Console.Clear();
@@ -194,7 +196,7 @@ namespace LB_1
                                             break;
                                     }
                                 }
-                                catch(TrainCarrExeption ex)
+                                catch (TrainCarrExeption ex)
                                 {
                                     $"Parameter error in {err}:\n{ex.Message} in {ex.type}"._sout(Red);
 
@@ -208,7 +210,7 @@ namespace LB_1
                                 {
 
                                     $"Parameter error in {err}:\n{ex.Message} in {ex.type}"._sout(Red);
-                                    
+
                                     //"log file updated..."._sout(Red);
                                     sw.WriteLine(DateTime.Now + $": Parameter error in {err}: {ex.Message} in {ex.type}");
                                     flag = false;
@@ -273,7 +275,7 @@ namespace LB_1
                             Console.WriteLine("2.Вес");
                             Console.WriteLine("3.Цвет");
                             string pNum = Console.ReadLine();
-                            foreach(Transport item in ListObj)
+                            foreach (Transport item in ListObj)
                             {
                                 item.SortNumber = pNum;
                             }
@@ -298,7 +300,7 @@ namespace LB_1
                                 Console.WriteLine("Выбери номер элемента, который ты хочешь удалить");
                                 int numDelElement = int.Parse(Console.ReadLine());
                                 ListObj.RemoveAt(numDelElement - 1);
-                                
+
                                 Console.WriteLine("Удаляем еще?");
                                 "Да/Нет"._sout(Red);
                                 string ss = Console.ReadLine().ToLower();
@@ -315,17 +317,20 @@ namespace LB_1
                             Console.ReadKey();
                             break;
                         case 9:
-                            fl = false;
-                            break;
-                        case 10:
                             Console.Clear();
                             "Какой вид транспорта вы хотите вывести?"._sout();
                             var name = Console.ReadLine();      //car
-                            var cars = QObj.Where(x => x.type == name);
-                            if (cars != null && cars.Count() > 0)
-                                cars.ToList().ForEach(x => x.Info());
+                            name = textInfo.ToTitleCase(textInfo.ToLower(name));
+                            var types = QObj.Where(x => x.type == name);
+                            if (types != null && types.Count() > 0)
+                                types.ToList().ForEach(x => x.Info());
+                            
                             else
                                 Console.WriteLine($"Тип {name} не найден");
+                            Console.ReadKey();
+                            break;
+                        case 10:
+                            fl = false;
                             break;
                         default:
                             break;
@@ -333,21 +338,21 @@ namespace LB_1
                     }
 
 
-            }
+                }
                 Console.Clear();
                 "\n\n\n\n░██████╗███████╗███████╗  ███╗░░██╗███████╗██╗░░██╗████████╗  ████████╗██╗███╗░░░███╗███████╗\n██╔════╝██╔════╝██╔════╝  ████╗░██║██╔════╝╚██╗██╔╝╚══██╔══╝  ╚══██╔══╝██║████╗░████║██╔════╝\n╚█████╗░█████╗░░█████╗░░  ██╔██╗██║█████╗░░░╚███╔╝░░░░██║░░░  ░░░██║░░░██║██╔████╔██║█████╗░░\n░╚═══██╗██╔══╝░░██╔══╝░░  ██║╚████║██╔══╝░░░██╔██╗░░░░██║░░░  ░░░██║░░░██║██║╚██╔╝██║██╔══╝░░\n██████╔╝███████╗███████╗  ██║░╚███║███████╗██╔╝╚██╗░░░██║░░░  ░░░██║░░░██║██║░╚═╝░██║███████╗\n╚═════╝░╚══════╝╚══════╝  ╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝░░░╚═╝░░░  ░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚══════╝"._sout(rainbowGradient);
-                
+
                 Console.ReadKey();
             }
         }
 
-        
 
-        private static void P_2(ref bool flag, ref TransportList ListObj, ref string err, StreamWriter sw,Queue<Transport> QObj)
+
+        public static void P_2(ref bool flag, ref TransportList ListObj, ref string err, StreamWriter sw, Queue<Transport> QObj)
         {
             Console.Clear();
             Console.Write("Введите название файла:");
-            string path = Console.ReadLine() + ".txt";
+            string path = "data.txt";
             while (flag)
             {
                 try
@@ -365,7 +370,7 @@ namespace LB_1
                                 err = line[0];
                                 ListObj.Add(new Truck(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), double.Parse(line[6])));
                                 QObj.Enqueue(new Truck(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), double.Parse(line[6])));
-                                
+
                                 break;
                             case "Car":
                                 err = line[0];
