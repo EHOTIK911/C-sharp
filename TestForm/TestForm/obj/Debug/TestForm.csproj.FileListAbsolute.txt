@@ -9,3 +9,14 @@ H:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\TestForm.exe
 H:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\TestForm.pdb
 H:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.exe
 H:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.pdb
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.csproj.AssemblyReference.cache
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.csproj.SuggestedBindingRedirects.cache
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.Form1.resources
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.Properties.Resources.resources
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.csproj.GenerateResource.cache
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.csproj.CoreCompileInputs.cache
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.exe
+F:\MyRepos\C-sharp\TestForm\TestForm\obj\Debug\TestForm.pdb
+F:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\TestForm.exe.config
+F:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\TestForm.exe
+F:\MyRepos\C-sharp\TestForm\TestForm\bin\Debug\TestForm.pdb

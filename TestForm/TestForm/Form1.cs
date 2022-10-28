@@ -139,8 +139,16 @@ namespace TestForm
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string str = textBox1.Text;
+            label1.Text = str;
+            for (int i = 0; i < ListObj.Count; i++)
+            {
+                str += $"{ListObj[i].type}\n{ListObj[i].type}\n{ListObj[i].year}\n{ListObj[i].weight}\n{ListObj[i].Color}\n\n";
 
-            
+
+            }
+            textBox1.AppendText(str);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -149,13 +157,18 @@ namespace TestForm
             label1.Text = str;
             for (int i = 0; i < ListObj.Count; i++)
             {
-                label1.Text = $"{ListObj[i].type}";
-                label1.Text = $"{ListObj[i].year}";
-                label1.Text = $"{ListObj[i].weight}";
-                label1.Text = $"{ListObj[i].Color}";
+                str += $"{ListObj[i].type}\n{ListObj[i].type}\n{ListObj[i].year}\n{ListObj[i].weight}\n{ListObj[i].Color}\n\n";
+                
 
             }
+            label1.Text = str;
+            for(int i = 0; i < 1; i++)
+                textBox1.Text = str;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

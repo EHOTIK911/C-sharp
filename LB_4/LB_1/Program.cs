@@ -28,6 +28,7 @@ namespace LB_1
         static void Main(string[] args)
         {
             Console.Title = "dEad.NOT Menu v. 2";
+            
             Console.OutputEncoding = Encoding.UTF8;
             ColoredConsole.Set();
             bool RemoveList = true;
@@ -291,17 +292,17 @@ namespace LB_1
                             Console.Clear();
                             "\r\n░██████╗░█████╗░██████╗░████████╗\r\n██╔════╝██╔══██╗██╔══██╗╚══██╔══╝\r\n╚█████╗░██║░░██║██████╔╝░░░██║░░░\r\n░╚═══██╗██║░░██║██╔══██╗░░░██║░░░\r\n██████╔╝╚█████╔╝██║░░██║░░░██║░░░\r\n╚═════╝░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░"._sout(discordGradient2);
                             ""._sout();
-                            Console.WriteLine("По какому параметру сортируем?");
-                            Console.WriteLine("1.Год");
-                            Console.WriteLine("2.Вес");
-                            Console.WriteLine("3.Цвет");
-                            string pNum = Console.ReadLine();
-                            foreach (Transport item in ListObj)
-                            {
-                                item.SortNumber = pNum;
-                            }
+                            //Console.WriteLine("По какому параметру сортируем?");
+                            //Console.WriteLine("1.Год");
+                            //Console.WriteLine("2.Вес");
+                            //Console.WriteLine("3.Цвет");
+                            //string pNum = Console.ReadLine();
+                            //foreach (Transport item in ListObj)
+                            //{
+                            //    item.SortNumber = pNum;
+                            //}
                             //source: https://stackoverflow.com/questions/16839479/using-lambda-expression-in-place-of-icomparer-argument
-                            ListObj.Sort(Comparer<Transport>.Create((firstObj, secondObject) => firstObj.CompareTo(secondObject)));
+                            ListObj.Sort(new ICompareColor()); //Comparer<Transport>.Create((firstObj, secondObject) => firstObj.CompareTo(secondObject)));
                             "Список успешно отсортирован!"._sout(Green);
                             Console.ReadKey();
                             break;
@@ -361,7 +362,7 @@ namespace LB_1
                                 bool fl101 = true;
                                 int PQ = default;
                                 Console.Clear();
-                                "\r\n░██████╗░██╗░░░██╗███████╗██╗░░░██╗███████╗\r\n██╔═══██╗██║░░░██║██╔════╝██║░░░██║██╔════╝\r\n██║██╗██║██║░░░██║█████╗░░██║░░░██║█████╗░░\r\n╚██████╔╝██║░░░██║██╔══╝░░██║░░░██║██╔══╝░░\r\n░╚═██╔═╝░╚██████╔╝███████╗╚██████╔╝███████╗\r\n░░░╚═╝░░░░╚═════╝░╚══════╝░╚═════╝░╚══════╝"._sout(rainbowGradient);
+                                "\r\n░██████╗░██╗░░░██╗███████╗██╗░░░██╗███████╗\r\n██╔═══██╗██║░░░██║██╔════╝██║░░░██║██╔════╝\r\n██║██╗██║██║░░░██║█████╗░░██║░░░██║█████╗░░\r\n╚██████╔╝██║░░░██║██╔══╝░░██║░░░██║██╔══╝░░\r\n░╚═██╔═╝░╚██████╔╝███████╗╚██████╔╝███████╗\r\n░░░╚═╝░░░░╚═════╝░╚══════╝░╚═════╝░╚══════╝"._sout(discordGradient1);
                                 ""._sout();
                                 Console.Write("1. Сортировка ");
                                 "COMING SOON"._sout(Red);
@@ -737,8 +738,8 @@ namespace LB_1
                             break;
                         case 404:
                             Console.Clear();
-                            $"Количество Элементов в очереди: {QObj.Count}"._sout();
-                            $"Количество Элементов в списке: {ListObj.Count}"._sout();
+                            if (QObj.Count != 0) $"[ Item count Queue: {QObj.Count} ]"._sout(Green); else $"[ Item count Queue: {QObj.Count} ]"._sout(Red);
+                            if (ListObj.Count != 0) $"[ Items count TransportList: {ListObj.Count} ]"._sout(Green); else $"[ Items count TransportList: {ListObj.Count} ]"._sout(Red);
                             Console.ReadKey();
                             break;
                         default:

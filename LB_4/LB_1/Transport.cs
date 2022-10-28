@@ -62,6 +62,13 @@ namespace LB_1
         }
 
     }
+    class ICompareColor : IComparer<Transport>
+    {
+        public int Compare(Transport x, Transport y)
+        {
+            return x.Color.CompareTo(y.Color);
+        }
+    }
 
     #region Classes
     public abstract class Transport : IComparable<Transport>
@@ -69,26 +76,90 @@ namespace LB_1
         #region Base
         public string type;
         private int _year;
-        public string SortNumber;
         List<TransportElements> transports = new List<TransportElements>();
+
         public int CompareTo(Transport t)
         {
-            if (SortNumber == "1")
+            if (type == t.type)
             {
-                return _year.CompareTo(t._year);
-            }
-            else if (SortNumber == "2")
-            {
+                if (weight == t.weight)
+                {
+                    if (Color == t.Color)
+                    {
+                        return _year.CompareTo(t._year);
+
+                    }
+                    return Color.CompareTo(t.Color);
+
+                }
                 return weight.CompareTo(t.weight);
+
             }
-            else if (SortNumber == "3")
-            {
-                return Color.CompareTo(t.Color);
-            }
-            else
-            {
-                return type.CompareTo(t.type);
-            }
+            return type.CompareTo(t.type);
+            //if (SortNumber == "1")
+            //{
+                
+            //    if (_year == t._year)
+            //    {
+            //        if (weight == t.weight)
+            //        {
+            //            if (Color == t.Color)
+            //            {
+            //                if (type == t.type)
+            //                    return type.CompareTo(t.type);
+            //                return _year.CompareTo(t._year);
+
+            //            }
+            //            return Color.CompareTo(t.Color);
+
+            //        }
+            //        return weight.CompareTo(t.weight);
+
+            //    }
+            //    return _year.CompareTo(t._year);
+            //}
+            //else if (SortNumber == "2")
+            //{
+            //    if (weight == t.weight)
+            //    {
+            //        if (Color == t.Color)
+            //        {
+            //            if(_year == t._year)
+            //                return _year.CompareTo(t._year);
+            //            return _year.CompareTo(t._year);
+
+
+            //        }
+            //        return Color.CompareTo(t.Color);
+
+            //    }
+            //    return weight.CompareTo(t.weight);
+            //}
+            //else if (SortNumber == "3")
+            //{
+            //    if (Color == t.Color)
+            //    {
+            //        if (_year == t._year)
+            //        {
+            //            if(type == t.type)
+            //            {
+
+            //                return weight.CompareTo(t.weight);
+
+            //            }
+            //            return type.CompareTo(t.type);
+
+            //        }
+            //        return _year.CompareTo(t._year);
+
+
+            //    }
+            //    return Color.CompareTo(t.Color);
+            //}
+            //else
+            //{
+                
+            //}
         }
         
         
@@ -194,6 +265,8 @@ namespace LB_1
         }
         public abstract void Info();
         public abstract void InfoFile(StreamWriter sw);
+
+        
     }
 
 
