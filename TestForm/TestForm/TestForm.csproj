@@ -68,6 +68,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\LB_1.Airplane.datasource" />
+    <None Include="Properties\DataSources\LB_1.ArgumentException.datasource" />
+    <None Include="Properties\DataSources\LB_1.Car.datasource" />
+    <None Include="Properties\DataSources\LB_1.FileNotFoundException.datasource" />
+    <None Include="Properties\DataSources\LB_1.Train.datasource" />
+    <None Include="Properties\DataSources\LB_1.TrainCarrExeption.datasource" />
+    <None Include="Properties\DataSources\LB_1.Transport.datasource" />
+    <None Include="Properties\DataSources\LB_1.TransportList.datasource" />
+    <None Include="Properties\DataSources\LB_1.Truck.datasource" />
+    <None Include="Properties\DataSources\LB_1.UnauthorizedAccessException.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

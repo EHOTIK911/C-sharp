@@ -70,7 +70,6 @@ namespace LB_1
         public string type;
         private int _year;
         public string SortNumber;
-        List<TransportElements> transports = new List<TransportElements>();
         public int CompareTo(Transport t)
         {
             if (SortNumber == "1")
@@ -141,10 +140,10 @@ namespace LB_1
         {
             return String.Format
                 (
-                $"      {type}\n" +
-                $"      Year: {_year}\n" +
-                $"      Weight: {_weight}\n" +
-                $"      Color: {Color}\n"
+                $"{type}\n" + Environment.NewLine +
+                $"Year: {_year}\n" + Environment.NewLine +
+                $"Weight: {_weight}\n" + Environment.NewLine +
+                $"Color: {Color}\n" + Environment.NewLine
                 );
         }
 
@@ -230,17 +229,16 @@ namespace LB_1
         }
         public override string ToString()
         {
-            return base.ToString() + $"      Сarriages: {Сarriages}\n";
+            return base.ToString() + $"Сarriages: {Сarriages}\n" + Environment.NewLine;
         }
         public override void Info()
 
         {
-            
-            Console.WriteLine($"{type}");
-            Console.WriteLine($"Year: {year}\n" +
-                              $"Weight: {weight}\n" +
-                              $"Color: {Color}");
-            Console.WriteLine($"Сarriages: {Сarriages}\n");
+            String.Format($"{type}\n" + 
+                          $"Year: {year}\n" +
+                          $"Weight: {weight}\n" +
+                          $"Color: {Color}\n" +
+                          $"Сarriages: {Сarriages}\n");
         }
         public override void InfoFile(StreamWriter sw)
 
@@ -279,7 +277,7 @@ namespace LB_1
         }
         public override string ToString()
         {
-            return base.ToString() + $"      WingLength: {WingLength}\n";
+            return base.ToString() + $"WingLength: {WingLength}\n" + Environment.NewLine;
         }
         public override void Info()
         {
@@ -403,7 +401,8 @@ namespace LB_1
         }
         public override string ToString()
         {
-            return base.ToString() + $"      Speed: {Speed}\n      HorsePower: {horspower}\n";
+            return base.ToString() + $"Speed: {Speed}\n"+ Environment.NewLine +
+                $"HorsePower: {horspower}\n" + Environment.NewLine;
         }
         public override void Info()
         {
@@ -476,7 +475,7 @@ namespace LB_1
         }
         public override string ToString()
         {
-            return base.ToString() + $"      bodyLength: {bodyLength}\n";
+            return base.ToString() + $"bodyLength: {bodyLength}\n" + Environment.NewLine;
         }
         public override void Info()
         {

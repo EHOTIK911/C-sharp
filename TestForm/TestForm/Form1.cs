@@ -28,7 +28,8 @@ namespace TestForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ListObj.Clear();
+            textBox1.Text = "";
         }
 
         private void импортToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,11 +53,10 @@ namespace TestForm
                         {
                             string[] line = textArray[i + 1].Split(' ');
                             switch (line[0])
-                            {
+                            { 
                                 case "Truck":
                                     err = line[0];
                                     ListObj.Add(new Truck(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), double.Parse(line[6])));
-                                    QObj.Enqueue(new Truck(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), double.Parse(line[6])));
 
                                     break;
                                 case "Car":
@@ -64,20 +64,14 @@ namespace TestForm
                                     ListObj.Add((line.Length < 7) ?
                                         new Car(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5])) :
                                         new Car(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), int.Parse(line[6])));
-                                    QObj.Enqueue((line.Length < 7) ?
-                                        new Car(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5])) :
-                                        new Car(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5]), int.Parse(line[6])));
                                     break;
                                 case "Airplane":
                                     err = line[0];
                                     ListObj.Add(new Airplane(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5])));
-                                    QObj.Enqueue(new Airplane(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], double.Parse(line[5])));
-
                                     break;
                                 case "Train":
                                     err = line[0];
                                     ListObj.Add(new Train(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], int.Parse(line[5])));
-                                    QObj.Enqueue(new Train(line[0], int.Parse(line[2]), int.Parse(line[3]), line[4], int.Parse(line[5])));
                                     break;
                                 default:
                                     break;
@@ -133,40 +127,33 @@ namespace TestForm
 
 
                 }
+                for (int i = 0; i < ListObj.Count; i++)
+                {
+                    textBox1.Text += ListObj[i].ToString() + Environment.NewLine;
+                    //$" Type = {ListObj[i].type}\n" + Environment.NewLine +
+                    //$" Year = {ListObj[i].year}\n" + Environment.NewLine +
+                    //$" Weight = {ListObj[i].weight}\n" + Environment.NewLine +
+                    //$" Color = {ListObj[i].Color}\n\n" + Environment.NewLine + Environment.NewLine;
+
+
+                }
             }
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string str = textBox1.Text;
-            label1.Text = str;
-            for (int i = 0; i < ListObj.Count; i++)
-            {
-                str += $"{ListObj[i].type}\n{ListObj[i].type}\n{ListObj[i].year}\n{ListObj[i].weight}\n{ListObj[i].Color}\n\n";
-
-
-            }
-            textBox1.AppendText(str);
-
+            string[] buf = textBox1.Text.Split('\n');
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string str = textBox1.Text;
-            label1.Text = str;
-            for (int i = 0; i < ListObj.Count; i++)
-            {
-                str += $"{ListObj[i].type}\n{ListObj[i].type}\n{ListObj[i].year}\n{ListObj[i].weight}\n{ListObj[i].Color}\n\n";
-                
 
-            }
-            label1.Text = str;
-            for(int i = 0; i < 1; i++)
-                textBox1.Text = str;
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }

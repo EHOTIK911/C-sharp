@@ -8,95 +8,14 @@ using System.Threading.Tasks;
 
 namespace LB_1
 {
-    public class TransportElements
-    {
-        public string type;
-        public int year;
-        public int weight;
-        public string color;
-        public double speed;
-        public int horsePower;
-        public int carriages;
-        public double bodyLength;
-        public double wingLength;
-        public TransportElements(string type = "", int year = 0, int weight = 0, string color = "", double speed = 0, int horsePower = 0)
-        {
-            this.type = type;
-            this.year = year;
-            this.weight = weight;
-            this.color = color;
-            this.speed = speed;
-            this.horsePower = horsePower;
-        }
-        public TransportElements(string type, int year, int weight, string color, int сarriages)
-        {
-            this.type = type;
-            this.year = year;
-            this.weight = weight;
-            this.color = color;
-            this.carriages = сarriages;
 
-        }
-        public TransportElements(string type, int year, int weight, string color, double wingLength)
-        {
-            this.type = type;
-            this.year = year;
-            this.weight = weight;
-            this.color = color;
-            this.wingLength = wingLength;
-
-        }
-        public TransportElements(string type, int year, int weight, string color, double speed, double bodyLength)
-        {
-            this.type = type;
-            this.year = year;
-            this.weight = weight;
-            this.color = color;
-            this.speed = speed;
-            this.bodyLength = bodyLength;
-        }
-
-        public override bool Equals(object obj) => Equals(obj as TransportElements);
-
-        public bool Equals(TransportElements te)
-        {
-            if(te is null)
-            {
-                return false;
-            }
-            if (ReferenceEquals(this, te))
-            {
-                return true;
-            }
-            if(GetType() != te.GetType())
-            {
-                return false;
-            }
-            return (type == te.type) && (year == te.year) && (weight == te.weight) && (color == te.color) && 
-                (speed == te.speed) && (horsePower == te.horsePower) && (bodyLength == te.bodyLength) && 
-                (wingLength == te.wingLength) && (carriages == te.carriages);
-        }
-        public static bool operator ==(TransportElements lTE, TransportElements rTE)
-        {
-            if(lTE is null)
-            {
-                if(rTE is null)
-                {
-                    return true;
-                }
-                return false;
-            }
-            return lTE.Equals(rTE);
-        }
-        public static bool operator !=(TransportElements lTE, TransportElements rTE) => !(lTE == rTE);
-
-    }
 
     public class TransportList : IEnumerable, IEnumerator, IList
     {
         private List<Transport> elements = new List<Transport>();
 
         //public void Sort() => elements.Sort();
+         
 
         public Transport this[int index]
         {
@@ -218,6 +137,7 @@ namespace LB_1
         public void CopyTo(Array array, int index)
         {
             array.SetValue(this, index);
+           
         }
 
         public void Sort(IComparer<Transport> comparer = null)
